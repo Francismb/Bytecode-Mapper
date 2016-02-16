@@ -16,7 +16,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarOutputStream;
 
 /**
- * Project ByteCodeMapper
+ * Project DefaultByteCodeMapperOLD
  * Created by francis on 10/19/15.
  *
  * Refactors a jar file and dumps it to the disk.

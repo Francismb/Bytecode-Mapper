@@ -2,7 +2,7 @@ package org.mapper.knn.factory;
 
 import static org.objectweb.asm.Opcodes.*;
 
-import org.mapper.utilities.data.Pair;
+import org.mapper.utilities.Pair;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.tree.*;
 import org.objectweb.asm.tree.analysis.Analyzer;
@@ -16,8 +16,7 @@ import java.util.Map;
 /**
  * Project ByteCodeMapper
  * Created by francis on 10/19/15.
- *
- * A class containing FeatureFactories used to generate features for fields.
+ * A class containing {@link FeatureFactory} used to generate features for fields.
  */
 public class FieldFeatures {
 

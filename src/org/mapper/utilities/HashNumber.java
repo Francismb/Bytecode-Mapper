@@ -1,7 +1,7 @@
 package org.mapper.utilities;
 
 /**
- * Project ByteCodeMapper
+ * Project DefaultByteCodeMapperOLD
  * Created by francis on 10/19/15.
  */
 public class HashNumber extends Number {

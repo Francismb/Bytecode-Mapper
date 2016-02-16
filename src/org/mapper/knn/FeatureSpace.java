@@ -5,7 +5,7 @@ import org.mapper.knn.instance.Instance;
 import java.util.*;
 
 /**
- * Project ByteCodeMapper
+ * Project DefaultByteCodeMapperOLD
  * Created by francis on 10/19/15.
  *
  * This is an implementation of knn classification.

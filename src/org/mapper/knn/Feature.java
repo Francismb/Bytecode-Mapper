@@ -1,11 +1,11 @@
 package org.mapper.knn;
 
-import org.mapper.utilities.data.Pair;
+import org.mapper.utilities.Pair;
 
 import java.io.Serializable;
 
 /**
- * Project ByteCodeMapper
+ * Project DefaultByteCodeMapperOLD
  * Created by francis on 10/19/15.
  *
  * A Feature<T> represents a category(class or field) and a attribute<key, value>.

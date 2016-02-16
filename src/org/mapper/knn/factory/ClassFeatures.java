@@ -3,9 +3,9 @@ package org.mapper.knn.factory;
 import static org.objectweb.asm.Opcodes.*;
 
 import org.mapper.knn.Feature;
-import org.mapper.utilities.bytecode.Type;
-import org.mapper.utilities.data.Pair;
-import org.mapper.utilities.graph.Node;
+import org.mapper.utilities.Type;
+import org.mapper.utilities.Pair;
+import org.mapper.utilities.Node;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldNode;
@@ -17,8 +17,7 @@ import java.util.Map;
 /**
  * Project ByteCodeMapper
  * Created by francis on 10/19/15.
- *
- * A class containing FeatureFactories used to generate features for classes.
+ * A class containing {@link FeatureFactory} used to generate features for classes.
  */
 public class ClassFeatures {
 
