@@ -1,7 +1,5 @@
-package org.knn.test;
+package org.mapper.knn;
 
-import org.mapper.knn.Feature;
-import org.mapper.knn.FeatureSpace;
 import org.mapper.knn.instance.Instance;
 
 import java.util.HashMap;

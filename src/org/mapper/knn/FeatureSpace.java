@@ -15,7 +15,7 @@ import java.util.Comparator;
 /**
  * Project ByteCodeMapper
  * Created by Francis on 10/19/15.
- *
+ * <p/>
  * This is an implementation of knn classification.
  * It is used to classify obfuscated fields/classes
  *
@@ -35,6 +35,7 @@ public class FeatureSpace<T> {
 
     /**
      * Constructs a new {@link FeatureSpace}.
+     *
      * @param features the features which make up this feature space.
      */
     public FeatureSpace(final Feature<T>[][] features) {
@@ -45,10 +46,10 @@ public class FeatureSpace<T> {
      * Computes the distance's between the instances and features
      * and classifies the instance using knn.
      *
-     * @param instance the instance to be computed.
+     * @param instance         the instance to be computed.
      * @param lenientNeighbors if true then when adding features to the nearest neighbors it will
-     *                 also add features of exact same value, this is good for large data sets
-     *                 with common similarities between features.
+     *                         also add features of exact same value, this is good for large data sets
+     *                         with common similarities between features.
      */
     public void compute(final Instance<T> instance, final boolean lenientNeighbors) {
         /*

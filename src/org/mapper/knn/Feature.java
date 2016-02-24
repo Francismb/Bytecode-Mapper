@@ -5,7 +5,7 @@ import org.mapper.knn.instance.Instance;
 /**
  * Project ByteCodeMapper
  * Created by Francis on 10/19/15.
- *
+ * <p/>
  * A {@link Feature} represents a category(class or field) and a type and value.
  * A {@link Feature} is compared to a {@link Instance} to calculate distance between them.
  */
@@ -33,9 +33,10 @@ public class Feature<T> implements Comparable<Feature<T>> {
 
     /**
      * Constructs a new {@link Feature}
+     *
      * @param category the category associated with this {@link Feature}
-     * @param type the type of this {@link Feature}
-     * @param value the value of this {@link Feature}
+     * @param type     the type of this {@link Feature}
+     * @param value    the value of this {@link Feature}
      */
     public Feature(final T category, final String type, final Double value) {
         this.category = category;
