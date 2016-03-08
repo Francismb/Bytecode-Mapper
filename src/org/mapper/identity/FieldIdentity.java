@@ -11,18 +11,12 @@ import org.mapper.knn.instance.Instance;
 public class FieldIdentity extends Identity<FieldNode> {
 
     /**
-     * The mapped name of this {@link FieldIdentity}.
-     */
-    public final String name;
-
-    /**
      * Constructs a new {@link FieldIdentity}.
      *
      * @param name     the mapped name.
      * @param instance the {@link Instance} of this {@link FieldIdentity}.
      */
     public FieldIdentity(final String name, final Instance<FieldNode> instance) {
-        super(instance);
-        this.name = name;
+        super(name, instance);
     }
 }

@@ -14,11 +14,6 @@ import java.util.Set;
 public class ClassIdentity extends Identity<ClassNode> {
 
     /**
-     * The mapped name of this {@link Identity}.
-     */
-    public final String name;
-
-    /**
      * A set of child {@link FieldIdentity}.
      */
     public final Set<FieldIdentity> fields = new HashSet<>();
@@ -30,8 +25,7 @@ public class ClassIdentity extends Identity<ClassNode> {
      * @param instance the {@link Instance} of this {@link FieldIdentity}.
      */
     public ClassIdentity(final String name, final Instance<ClassNode> instance) {
-        super(instance);
-        this.name = name;
+        super(name, instance);
     }
 
     /**

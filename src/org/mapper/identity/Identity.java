@@ -10,16 +10,22 @@ import org.mapper.knn.instance.Instance;
 public class Identity<T> {
 
     /**
+     * The name of this {@link Identity}
+     */
+    public final String name;
+
+    /**
      * The {@link Instance} of this {@link Identity}.
      */
     public final Instance<T> instance;
 
     /**
      * Constructs a new {@link Identity}.
-     *
+     * @param name the name of this {@link Identity}
      * @param instance the {@link Instance} of this {@link Identity}.
      */
-    public Identity(final Instance<T> instance) {
+    public Identity(final String name, final Instance<T> instance) {
+        this.name = name;
         this.instance = instance;
     }
 }
