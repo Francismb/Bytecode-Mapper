@@ -168,7 +168,7 @@ public abstract class AbstractInsnNode {
      * Returns the type of this instruction.
      *
      * @return the type of this instruction, i.e. one the constants defined in
-     *         this class.
+     *         this classproducers.
      */
     public abstract int getType();
 

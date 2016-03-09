@@ -14,28 +14,28 @@ import java.util.Map;
  * Project DefaultByteCodeMapperOLD
  * Created by francis on 10/19/15.
  *
- * Renames old field and class names to new ones.
+ * Renames old field and classproducers names to new ones.
  */
 public class Renamer {
 
     /**
-     * The class map(new class name -> old class name)
+     * The classproducers map(new classproducers name -> old classproducers name)
      */
     private final Map<String, String> classMap = new HashMap<>();
 
     /**
-     * The field map(new class name ':' new field name -> old field name)
+     * The field map(new classproducers name ':' new field name -> old field name)
      */
     private final Map<String, String> fieldMap = new HashMap<>();
 
     /**
      * Constructs a new {@link Renamer}.
-     * @param classIdentities used to generate the class and field maps.
+     * @param classIdentities used to generate the classproducers and field maps.
      */
     public Renamer(final List<ClassIdentity> classIdentities) {
         /*
-         * Load the class instances and field instances
-         * into a class map and field map
+         * Load the classproducers instances and field instances
+         * into a classproducers map and field map
          */
         for (final ClassIdentity classInstance : classIdentities) {
             classMap.put(classInstance.instance.category.name, classInstance.name);
@@ -47,7 +47,7 @@ public class Renamer {
     }
 
     /**
-     * Renames the specified class using a {@link RemappingClassAdapter}.
+     * Renames the specified classproducers using a {@link RemappingClassAdapter}.
      * @param classNode the {@link ClassNode} to be renamed.
      * @param classWriter the {@link ClassWriter} to be used by the {@link RemappingClassAdapter}.
      */

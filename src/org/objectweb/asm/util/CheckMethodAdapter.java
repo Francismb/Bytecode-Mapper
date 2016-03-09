@@ -57,7 +57,7 @@ import org.objectweb.asm.tree.analysis.BasicVerifier;
  * each visit method checks some preconditions based <i>only</i> on its
  * arguments - such as the fact that the given opcode is correct for a given
  * visit method. This adapter can also perform some basic data flow checks (more
- * precisely those that can be performed without the full class hierarchy - see
+ * precisely those that can be performed without the full classproducers hierarchy - see
  * {@link BasicVerifier}). For instance in a
  * method whose signature is <tt>void m ()</tt>, the invalid instruction
  * IRETURN, or the invalid sequence IADD L2I will be detected if the data flow
@@ -70,7 +70,7 @@ import org.objectweb.asm.tree.analysis.BasicVerifier;
 public class CheckMethodAdapter extends MethodVisitor {
 
     /**
-     * The class version number.
+     * The classproducers version number.
      */
     public int version;
 
@@ -999,7 +999,7 @@ public class CheckMethodAdapter extends MethodVisitor {
                 throw new IllegalArgumentException("Illegal LDC constant value");
             }
             if (s != Type.METHOD && (version & 0xFFFF) < Opcodes.V1_5) {
-                throw new IllegalArgumentException("ldc of a constant class requires at least version 1.5");
+                throw new IllegalArgumentException("ldc of a constant classproducers requires at least version 1.5");
             }
             if (s == Type.METHOD && (version & 0xFFFF) < Opcodes.V1_7) {
                 throw new IllegalArgumentException("ldc of a method type requires at least version 1.7");
@@ -1021,7 +1021,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     /**
      * Checks that the given string is a valid unqualified name.
      *
-     * @param version the class version.
+     * @param version the classproducers version.
      * @param name the string to be checked.
      * @param msg a message to be used in case of error.
      */
@@ -1090,7 +1090,7 @@ public class CheckMethodAdapter extends MethodVisitor {
      * Checks that the given string is a valid Java identifier or is equal to
      * '&lt;init&gt;' or '&lt;clinit&gt;'.
      *
-     * @param version the class version.
+     * @param version the classproducers version.
      * @param name the string to be checked.
      * @param msg a message to be used in case of error.
      */
@@ -1132,7 +1132,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks that the given string is a valid internal class name.
+     * Checks that the given string is a valid internal classproducers name.
      *
      * @param name the string to be checked.
      * @param msg a message to be used in case of error.
@@ -1150,7 +1150,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks that the given substring is a valid internal class name.
+     * Checks that the given substring is a valid internal classproducers name.
      *
      * @param name the string to be checked.
      * @param start index of the key character of the identifier (inclusive).
@@ -1180,7 +1180,7 @@ public class CheckMethodAdapter extends MethodVisitor {
         } catch (IllegalArgumentException _) {
             throw new IllegalArgumentException("Invalid "
                     + msg
-                    + " (must be a fully qualified class name in internal form): "
+                    + " (must be a fully qualified classproducers name in internal form): "
                     + name);
         }
     }
@@ -1291,7 +1291,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks a class signature.
+     * Checks a classproducers signature.
      *
      * @param signature a string containing the signature that must be checked.
      */
@@ -1365,7 +1365,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks the formal type parameters of a class or method signature.
+     * Checks the formal type parameters of a classproducers or method signature.
      *
      * @param signature a string containing the signature that must be checked.
      * @param pos index of key character to be checked.
@@ -1385,7 +1385,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks a formal type parameter of a class or method signature.
+     * Checks a formal type parameter of a classproducers or method signature.
      *
      * @param signature a string containing the signature that must be checked.
      * @param pos index of key character to be checked.
@@ -1433,7 +1433,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks a class type signature.
+     * Checks a classproducers type signature.
      *
      * @param signature a string containing the signature that must be checked.
      * @param pos index of key character to be checked.
@@ -1463,7 +1463,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks the type arguments in a class type signature.
+     * Checks the type arguments in a classproducers type signature.
      *
      * @param signature a string containing the signature that must be checked.
      * @param pos index of key character to be checked.
@@ -1482,7 +1482,7 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Checks a type argument in a class type signature.
+     * Checks a type argument in a classproducers type signature.
      *
      * @param signature a string containing the signature that must be checked.
      * @param pos index of key character to be checked.
@@ -1651,10 +1651,10 @@ public class CheckMethodAdapter extends MethodVisitor {
     }
 
     /**
-     * Returns the field of the Label class whose name is given.
+     * Returns the field of the Label classproducers whose name is given.
      *
      * @param name a field name.
-     * @return the field of the Label class whose name is given, or null.
+     * @return the field of the Label classproducers whose name is given, or null.
      */
     private static Field getLabelField(final String name) {
         try {

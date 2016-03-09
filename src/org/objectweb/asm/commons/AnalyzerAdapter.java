@@ -51,7 +51,7 @@ import org.objectweb.asm.Type;
  * the state of the stack map frame <i>before</i> each instruction by reading
  * the value of these fields in its visit<i>X</i> methods (this requires a
  * reference to the AnalyzerAdapter that is before it in the chain).
- * If this adapter is used with a class that does not contain stack map table
+ * If this adapter is used with a classproducers that does not contain stack map table
  * attributes (i.e., pre Java 6 classes) then this adapter may not be able to
  * compute the stack map frame for each instruction. In this case no exception
  * is thrown but the {@link #locals} and {@link #stack} fields will be null for
@@ -115,7 +115,7 @@ public class AnalyzerAdapter extends MethodVisitor {
     private int maxLocals;
 
     /**
-     * The owner's class name.
+     * The owner's classproducers name.
      */
     private String owner;
 
@@ -125,7 +125,7 @@ public class AnalyzerAdapter extends MethodVisitor {
      * {@link #AnalyzerAdapter(int, String, int, String, String, MethodVisitor)}
      * version.
      *
-     * @param owner the owner's class name.
+     * @param owner the owner's classproducers name.
      * @param access the method's access flags (see {@link Opcodes}).
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type Type}).
@@ -147,7 +147,7 @@ public class AnalyzerAdapter extends MethodVisitor {
      *
      * @param api the ASM API version implemented by this visitor. Must be one
      *        of {@link Opcodes#ASM4}.
-     * @param owner the owner's class name.
+     * @param owner the owner's classproducers name.
      * @param access the method's access flags (see {@link Opcodes}).
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type Type}).

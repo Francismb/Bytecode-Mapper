@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Created by Francis on 24/02/16.
  *
- * Represents a java class identity
+ * Represents a java classproducers identity
  */
 public class ClassIdentity extends Identity<ClassNode> {
 

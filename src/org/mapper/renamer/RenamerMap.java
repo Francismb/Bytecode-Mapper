@@ -13,18 +13,18 @@ import java.util.Map;
 public class RenamerMap extends Remapper {
 
     /**
-     * The class map(old name -> new name).
+     * The classproducers map(old name -> new name).
      */
     private final Map<String, String> classMap;
 
     /**
-     * The field map(old class ':' old field -> new name).
+     * The field map(old classproducers ':' old field -> new name).
      */
     private final Map<String, String> fieldMap;
 
     /**
      * Constructs a new {@link RenamerMap}.
-     * @param classMap the class map.
+     * @param classMap the classproducers map.
      * @param fieldMap the field map.
      */
     public RenamerMap(final Map<String, String> classMap, final Map<String, String> fieldMap) {

@@ -96,9 +96,9 @@ public abstract class SignatureVisitor {
     }
 
     /**
-     * Visits the class bound of the last visited formal type parameter.
+     * Visits the classproducers bound of the last visited formal type parameter.
      *
-     * @return a non null visitor to visit the signature of the class bound.
+     * @return a non null visitor to visit the signature of the classproducers bound.
      */
     public SignatureVisitor visitClassBound() {
         return this;
@@ -114,9 +114,9 @@ public abstract class SignatureVisitor {
     }
 
     /**
-     * Visits the type of the super class.
+     * Visits the type of the super classproducers.
      *
-     * @return a non null visitor to visit the signature of the super class
+     * @return a non null visitor to visit the signature of the super classproducers
      *         type.
      */
     public SignatureVisitor visitSuperclass() {
@@ -124,7 +124,7 @@ public abstract class SignatureVisitor {
     }
 
     /**
-     * Visits the type of an interface implemented by the class.
+     * Visits the type of an interface implemented by the classproducers.
      *
      * @return a non null visitor to visit the signature of the interface type.
      */
@@ -187,31 +187,31 @@ public abstract class SignatureVisitor {
     }
 
     /**
-     * Starts the visit of a signature corresponding to a class or interface
+     * Starts the visit of a signature corresponding to a classproducers or interface
      * type.
      *
-     * @param name the internal name of the class or interface.
+     * @param name the internal name of the classproducers or interface.
      */
     public void visitClassType(String name) {
     }
 
     /**
-     * Visits an inner class.
+     * Visits an inner classproducers.
      *
-     * @param name the local name of the inner class in its enclosing class.
+     * @param name the local name of the inner classproducers in its enclosing classproducers.
      */
     public void visitInnerClassType(String name) {
     }
 
     /**
-     * Visits an unbounded type argument of the last visited class or inner
-     * class type.
+     * Visits an unbounded type argument of the last visited classproducers or inner
+     * classproducers type.
      */
     public void visitTypeArgument() {
     }
 
     /**
-     * Visits a type argument of the last visited class or inner class type.
+     * Visits a type argument of the last visited classproducers or inner classproducers type.
      *
      * @param wildcard '+', '-' or '='.
      * @return a non null visitor to visit the signature of the type argument.
@@ -221,7 +221,7 @@ public abstract class SignatureVisitor {
     }
 
     /**
-     * Ends the visit of a signature corresponding to a class or interface type.
+     * Ends the visit of a signature corresponding to a classproducers or interface type.
      */
     public void visitEnd() {
     }

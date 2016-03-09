@@ -151,7 +151,7 @@ public class Method {
      *        specified by their unqualified name, depending on the
      *        defaultPackage argument; all other classes names must be fully
      *        qualified.
-     * @param defaultPackage true if unqualified class names belong to the
+     * @param defaultPackage true if unqualified classproducers names belong to the
      *        default package, or false if they correspond to java.lang classes.
      *        For instance "Object" means "Object" if this option is true, or
      *        "java.lang.Object" otherwise.

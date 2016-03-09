@@ -612,7 +612,7 @@ public abstract class AdviceAdapter extends GeneratorAdapter implements Opcodes
     }
 
     /**
-     * Called at the beginning of the method or after super class class call in
+     * Called at the beginning of the method or after super classproducers classproducers call in
      * the constructor. <br><br>
      *
      * <i>Custom code can use or change all the local variables, but should not

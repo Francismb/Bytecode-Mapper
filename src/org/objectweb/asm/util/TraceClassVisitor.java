@@ -41,12 +41,12 @@ import org.objectweb.asm.Opcodes;
 
 /**
  * A {@link ClassVisitor} that prints the classes it visits with a
- * {@link Printer}. This class visitor can be used in the middle of a class
- * visitor chain to trace the class that is visited at a given point in this
+ * {@link Printer}. This classproducers visitor can be used in the middle of a classproducers
+ * visitor chain to trace the classproducers that is visited at a given point in this
  * chain. This may be useful for debugging purposes. <p> The trace printed when
- * visiting the <tt>Hello</tt> class is the following: <p> <blockquote>
+ * visiting the <tt>Hello</tt> classproducers is the following: <p> <blockquote>
  * 
- * <pre> // class version 49.0 (49) // access flags 0x21 public class Hello {
+ * <pre> // classproducers version 49.0 (49) // access flags 0x21 public classproducers Hello {
  * 
  * // compiled from: Hello.java
  * 
@@ -60,7 +60,7 @@ import org.objectweb.asm.Opcodes;
  * 
  * </blockquote> where <tt>Hello</tt> is defined by: <p> <blockquote>
  * 
- * <pre> public class Hello {
+ * <pre> public classproducers Hello {
  * 
  * public static void main(String[] args) {
  * System.out.println(&quot;hello&quot;); } } </pre>
@@ -73,7 +73,7 @@ import org.objectweb.asm.Opcodes;
 public final class TraceClassVisitor extends ClassVisitor {
 
     /**
-     * The print writer to be used to print the class. May be null.
+     * The print writer to be used to print the classproducers. May be null.
      */
     private final PrintWriter pw;
 
@@ -85,7 +85,7 @@ public final class TraceClassVisitor extends ClassVisitor {
     /**
      * Constructs a new {@link TraceClassVisitor}.
      * 
-     * @param pw the print writer to be used to print the class.
+     * @param pw the print writer to be used to print the classproducers.
      */
     public TraceClassVisitor(final PrintWriter pw) {
         this(null, pw);
@@ -96,7 +96,7 @@ public final class TraceClassVisitor extends ClassVisitor {
      * 
      * @param cv the {@link ClassVisitor} to which this visitor delegates calls.
      *        May be <tt>null</tt>.
-     * @param pw the print writer to be used to print the class.
+     * @param pw the print writer to be used to print the classproducers.
      */
     public TraceClassVisitor(final ClassVisitor cv, final PrintWriter pw) {
         this(cv, new Textifier(), pw);
@@ -108,7 +108,7 @@ public final class TraceClassVisitor extends ClassVisitor {
      * @param cv the {@link ClassVisitor} to which this visitor delegates calls.
      *        May be <tt>null</tt>.
      * @param p the object that actually converts visit events into text.
-     * @param pw the print writer to be used to print the class. May be null if
+     * @param pw the print writer to be used to print the classproducers. May be null if
      *        you simply want to use the result via
      *        {@link Printer#getText()}, instead of printing it.
      */

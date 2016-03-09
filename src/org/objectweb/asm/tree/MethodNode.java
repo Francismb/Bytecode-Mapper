@@ -260,7 +260,7 @@ public class MethodNode extends MethodVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the MethodVisitor abstract class
+    // Implementation of the MethodVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override
@@ -547,9 +547,9 @@ public class MethodNode extends MethodVisitor {
     }
 
     /**
-     * Makes the given class visitor visit this method.
+     * Makes the given classproducers visitor visit this method.
      *
-     * @param cv a class visitor.
+     * @param cv a classproducers visitor.
      */
     public void accept(final ClassVisitor cv) {
         String[] exceptions = new String[this.exceptions.size()];

@@ -30,7 +30,7 @@
 package org.objectweb.asm;
 
 /**
- * A visitor to visit a Java method. The methods of this class must be
+ * A visitor to visit a Java method. The methods of this classproducers must be
  * called in the following order: [ <tt>visitAnnotationDefault</tt> ] (
  * <tt>visitAnnotation</tt> | <tt>visitParameterAnnotation</tt> |
  * <tt>visitAttribute</tt> )* [ <tt>visitCode</tt> ( <tt>visitFrame</tt> |
@@ -114,7 +114,7 @@ public abstract class MethodVisitor {
     /**
      * Visits an annotation of this method.
      *
-     * @param desc the class descriptor of the annotation class.
+     * @param desc the classproducers descriptor of the annotation classproducers.
      * @param visible <tt>true</tt> if the annotation is visible at runtime.
      * @return a visitor to visit the annotation values, or <tt>null</tt> if
      *         this visitor is not interested in visiting this annotation.
@@ -130,7 +130,7 @@ public abstract class MethodVisitor {
      * Visits an annotation of a parameter this method.
      *
      * @param parameter the parameter index.
-     * @param desc the class descriptor of the annotation class.
+     * @param desc the classproducers descriptor of the annotation classproducers.
      * @param visible <tt>true</tt> if the annotation is visible at runtime.
      * @return a visitor to visit the annotation values, or <tt>null</tt> if
      *         this visitor is not interested in visiting this annotation.
@@ -296,12 +296,12 @@ public abstract class MethodVisitor {
 
     /**
      * Visits a type instruction. A type instruction is an instruction that
-     * takes the internal name of a class as parameter.
+     * takes the internal name of a classproducers as parameter.
      *
      * @param opcode the opcode of the type instruction to be visited. This
      *        opcode is either NEW, ANEWARRAY, CHECKCAST or INSTANCEOF.
      * @param type the operand of the instruction to be visited. This operand
-     *        must be the internal name of an object or array class (see {@link
+     *        must be the internal name of an object or array classproducers (see {@link
      *        Type#getInternalName() getInternalName}).
      */
     public void visitTypeInsn(int opcode, String type) {
@@ -316,7 +316,7 @@ public abstract class MethodVisitor {
      *
      * @param opcode the opcode of the type instruction to be visited. This
      *        opcode is either GETSTATIC, PUTSTATIC, GETFIELD or PUTFIELD.
-     * @param owner the internal name of the field's owner class (see {@link
+     * @param owner the internal name of the field's owner classproducers (see {@link
      *        Type#getInternalName() getInternalName}).
      * @param name the field's name.
      * @param desc the field's descriptor (see {@link Type Type}).
@@ -334,7 +334,7 @@ public abstract class MethodVisitor {
      * @param opcode the opcode of the type instruction to be visited. This
      *        opcode is either INVOKEVIRTUAL, INVOKESPECIAL, INVOKESTATIC
      *        or INVOKEINTERFACE.
-     * @param owner the internal name of the method's owner class (see {@link
+     * @param owner the internal name of the method's owner classproducers (see {@link
      *        Type#getInternalName() getInternalName}).
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type Type}).
@@ -433,7 +433,7 @@ public abstract class MethodVisitor {
      * @param cst the constant to be loaded on the stack. This parameter must be
      *        a non null {@link Integer}, a {@link Float}, a {@link Long}, a
      *        {@link Double}, a {@link String}, a {@link Type} of OBJECT or ARRAY
-     *        sort for <tt>.class</tt> constants, for classes whose version is
+     *        sort for <tt>.classproducers</tt> constants, for classes whose version is
      *        49.0, a {@link Type} of METHOD sort or a {@link Handle} for
      *        MethodType and MethodHandle constants, for classes whose version
      *        is 51.0.
@@ -554,7 +554,7 @@ public abstract class MethodVisitor {
      * Visits a line number declaration.
      *
      * @param line a line number. This number refers to the source file from
-     *        which the class was compiled.
+     *        which the classproducers was compiled.
      * @param start the key instruction corresponding to this line number.
      * @throws IllegalArgumentException if <tt>start</tt> has not already been
      *         visited by this visitor (by the {@link #visitLabel visitLabel}

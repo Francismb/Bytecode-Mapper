@@ -179,7 +179,7 @@ public class Processor {
         if (templates == null) {
             inDocHandler = outDocHandler;
         } else {
-            inDocHandler = new InputSlicingHandler("class",
+            inDocHandler = new InputSlicingHandler("classproducers",
                     outDocHandler,
                     new TransformerHandlerFactory(saxtf,
                             templates,
@@ -241,7 +241,7 @@ public class Processor {
     private boolean isClassEntry(final ZipEntry ze) {
         String name = ze.getName();
         return inRepresentation == SINGLE_XML && name.equals(SINGLE_XML_NAME)
-                || name.endsWith(".class") || name.endsWith(".class.xml");
+                || name.endsWith(".classproducers") || name.endsWith(".classproducers.xml");
     }
 
     private void processEntry(
@@ -320,12 +320,12 @@ public class Processor {
         String name = ze.getName();
         if (isClassEntry(ze)) {
             if (inRepresentation != BYTECODE && outRepresentation == BYTECODE) {
-                name = name.substring(0, name.length() - 4); // .class.xml to
-                // .class
+                name = name.substring(0, name.length() - 4); // .classproducers.xml to
+                // .classproducers
             } else if (inRepresentation == BYTECODE
                     && outRepresentation != BYTECODE)
             {
-                name += ".xml"; // .class to .class.xml
+                name += ".xml"; // .classproducers to .classproducers.xml
             }
             // } else if( CODE2ASM.equals( command)) {
             // name = name.substring( 0, name.length()-6).concat( ".asm");
@@ -443,7 +443,7 @@ public class Processor {
     }
 
     /**
-     * IputStream wrapper class used to protect input streams from being closed
+     * IputStream wrapper classproducers used to protect input streams from being closed
      * by some stupid XML parsers.
      */
     private static final class ProtectedInputStream extends InputStream {
@@ -963,7 +963,7 @@ public class Processor {
             final EntryElement entryElement,
             final boolean isXml)
         {
-            this.subdocumentRoot = "class";
+            this.subdocumentRoot = "classproducers";
             this.subdocumentHandlerFactory = subdocumentHandlerFactory;
             this.entryElement = entryElement;
             this.isXml = isXml;
@@ -988,8 +988,8 @@ public class Processor {
                 }
                 try {
                     entryElement.openEntry(isXml
-                            ? name + ".class.xml"
-                            : name + ".class");
+                            ? name + ".classproducers.xml"
+                            : name + ".classproducers");
                 } catch (IOException ex) {
                     throw new SAXException(ex.toString(), ex);
                 }

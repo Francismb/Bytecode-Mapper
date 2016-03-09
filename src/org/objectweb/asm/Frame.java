@@ -49,7 +49,7 @@ final class Frame {
      *
      * All output and input frames are stored as arrays of integers. Reference
      * and array types are represented by an index into a type table (which is
-     * not the same as the constant pool of the class, in order to avoid adding
+     * not the same as the constant pool of the classproducers, in order to avoid adding
      * unnecessary constants in the pool - not all computed frames will end up
      * being stored in the stack map table). This allows very fast type
      * comparisons.
@@ -152,7 +152,7 @@ final class Frame {
     /**
      * Base kind of the uninitialized base types. The BASE_VALUE of such types
      * in an index into the type table (the Item at that index contains both an
-     * instruction offset and an internal class name).
+     * instruction offset and an internal classproducers name).
      */
     static final int UNINITIALIZED = BASE | 0x800000;
 
@@ -825,7 +825,7 @@ final class Frame {
      *
      * @param opcode the opcode of the instruction.
      * @param arg the operand of the instruction, if any.
-     * @param cw the class writer to which this label belongs.
+     * @param cw the classproducers writer to which this label belongs.
      * @param item the operand of the instructions, if any.
      */
     void execute(

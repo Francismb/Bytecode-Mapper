@@ -39,7 +39,7 @@
 <!ELEMENT classes ( class+ )>
 
 <!--
-  Root element for a single class.
+  Root element for a single classproducers.
 -->
 <!ELEMENT class ( interfaces, ( field | innerclass | method )*)>
 <!ATTLIST class access CDATA #REQUIRED>

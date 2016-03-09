@@ -30,7 +30,7 @@
 package org.objectweb.asm;
 
 /**
- * A visitor to visit a Java annotation. The methods of this class must be
+ * A visitor to visit a Java annotation. The methods of this classproducers must be
  * called in the following order: ( <tt>visit</tt> | <tt>visitEnum</tt> |
  * <tt>visitAnnotation</tt> | <tt>visitArray</tt> )* <tt>visitEnd</tt>.
  *
@@ -99,7 +99,7 @@ public abstract class AnnotationVisitor {
      * Visits an enumeration value of the annotation.
      *
      * @param name the value name.
-     * @param desc the class descriptor of the enumeration class.
+     * @param desc the classproducers descriptor of the enumeration classproducers.
      * @param value the actual enumeration value.
      */
     public void visitEnum(String name, String desc, String value) {
@@ -112,7 +112,7 @@ public abstract class AnnotationVisitor {
      * Visits a nested annotation value of the annotation.
      *
      * @param name the value name.
-     * @param desc the class descriptor of the nested annotation class.
+     * @param desc the classproducers descriptor of the nested annotation classproducers.
      * @return a visitor to visit the actual nested annotation value, or
      *         <tt>null</tt> if this visitor is not interested in visiting
      *         this nested annotation. <i>The nested annotation value must be

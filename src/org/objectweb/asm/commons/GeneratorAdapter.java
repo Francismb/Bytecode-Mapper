@@ -43,10 +43,10 @@ import org.objectweb.asm.Type;
 
 /**
  * A {@link org.objectweb.asm.MethodVisitor} with convenient methods to generate
- * code. For example, using this adapter, the class below
+ * code. For example, using this adapter, the classproducers below
  *
  * <pre>
- * public class Example {
+ * public classproducers Example {
  *     public static void main(String[] args) {
  *         System.out.println(&quot;Hello world!&quot;);
  *     }
@@ -62,15 +62,15 @@ import org.objectweb.asm.Type;
  * Method m = Method.getMethod(&quot;void &lt;init&gt; ()&quot;);
  * GeneratorAdapter mg = new GeneratorAdapter(ACC_PUBLIC, m, null, null, cw);
  * mg.loadThis();
- * mg.invokeConstructor(Type.getType(Object.class), m);
+ * mg.invokeConstructor(Type.getType(Object.classproducers), m);
  * mg.returnValue();
  * mg.endMethod();
  *
  * m = Method.getMethod(&quot;void main (String[])&quot;);
  * mg = new GeneratorAdapter(ACC_PUBLIC + ACC_STATIC, m, null, null, cw);
- * mg.getStatic(Type.getType(System.class), &quot;out&quot;, Type.getType(PrintStream.class));
+ * mg.getStatic(Type.getType(System.classproducers), &quot;out&quot;, Type.getType(PrintStream.classproducers));
  * mg.push(&quot;Hello world!&quot;);
- * mg.invokeVirtual(Type.getType(PrintStream.class), Method.getMethod(&quot;void println (String)&quot;));
+ * mg.invokeVirtual(Type.getType(PrintStream.classproducers), Method.getMethod(&quot;void println (String)&quot;));
  * mg.returnValue();
  * mg.endMethod();
  *
@@ -301,7 +301,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      *        <tt>null</tt>).
      * @param exceptions the exceptions thrown by the adapted method (may be
      *        <tt>null</tt>).
-     * @param cv the class visitor to which this adapter delegates calls.
+     * @param cv the classproducers visitor to which this adapter delegates calls.
      */
     public GeneratorAdapter(
         final int access,
@@ -1236,7 +1236,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates a get field or set field instruction.
      *
      * @param opcode the instruction's opcode.
-     * @param ownerType the class in which the field is defined.
+     * @param ownerType the classproducers in which the field is defined.
      * @param name the name of the field.
      * @param fieldType the type of the field.
      */
@@ -1256,7 +1256,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to push the value of a static field on the
      * stack.
      *
-     * @param owner the class in which the field is defined.
+     * @param owner the classproducers in which the field is defined.
      * @param name the name of the field.
      * @param type the type of the field.
      */
@@ -1268,7 +1268,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to store the top stack value in a static field.
      *
-     * @param owner the class in which the field is defined.
+     * @param owner the classproducers in which the field is defined.
      * @param name the name of the field.
      * @param type the type of the field.
      */
@@ -1281,7 +1281,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to push the value of a non static field on the
      * stack.
      *
-     * @param owner the class in which the field is defined.
+     * @param owner the classproducers in which the field is defined.
      * @param name the name of the field.
      * @param type the type of the field.
      */
@@ -1293,7 +1293,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to store the top stack value in a non static
      * field.
      *
-     * @param owner the class in which the field is defined.
+     * @param owner the classproducers in which the field is defined.
      * @param name the name of the field.
      * @param type the type of the field.
      */
@@ -1309,7 +1309,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates an invoke method instruction.
      *
      * @param opcode the instruction's opcode.
-     * @param type the class in which the method is defined.
+     * @param type the classproducers in which the method is defined.
      * @param method the method to be invoked.
      */
     private void invokeInsn(
@@ -1329,7 +1329,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to invoke a normal method.
      *
-     * @param owner the class in which the method is defined.
+     * @param owner the classproducers in which the method is defined.
      * @param method the method to be invoked.
      */
     public void invokeVirtual(final Type owner, final Method method) {
@@ -1339,7 +1339,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to invoke a constructor.
      *
-     * @param type the class in which the constructor is defined.
+     * @param type the classproducers in which the constructor is defined.
      * @param method the constructor to be invoked.
      */
     public void invokeConstructor(final Type type, final Method method) {
@@ -1349,7 +1349,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to invoke a static method.
      *
-     * @param owner the class in which the method is defined.
+     * @param owner the classproducers in which the method is defined.
      * @param method the method to be invoked.
      */
     public void invokeStatic(final Type owner, final Method method) {
@@ -1359,7 +1359,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to invoke an interface method.
      *
-     * @param owner the class in which the method is defined.
+     * @param owner the classproducers in which the method is defined.
      * @param method the method to be invoked.
      */
     public void invokeInterface(final Type owner, final Method method) {
@@ -1399,7 +1399,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
     /**
      * Generates the instruction to create a new object.
      *
-     * @param type the class of the object to be created.
+     * @param type the classproducers of the object to be created.
      */
     public void newInstance(final Type type) {
         typeInsn(Opcodes.NEW, type);
@@ -1464,9 +1464,9 @@ public class GeneratorAdapter extends LocalVariablesSorter {
 
     /**
      * Generates the instructions to create and throw an exception. The
-     * exception class must have a constructor with a single String argument.
+     * exception classproducers must have a constructor with a single String argument.
      *
-     * @param type the class of the exception to be thrown.
+     * @param type the classproducers of the exception to be thrown.
      * @param msg the detailed message of the exception.
      */
     public void throwException(final Type type, final String msg) {
@@ -1481,7 +1481,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to check that the top stack value is of the
      * given type.
      *
-     * @param type a class or interface type.
+     * @param type a classproducers or interface type.
      */
     public void checkCast(final Type type) {
         if (!type.equals(OBJECT_TYPE)) {
@@ -1493,7 +1493,7 @@ public class GeneratorAdapter extends LocalVariablesSorter {
      * Generates the instruction to test if the top stack value is of the given
      * type.
      *
-     * @param type a class or interface type.
+     * @param type a classproducers or interface type.
      */
     public void instanceOf(final Type type) {
         typeInsn(Opcodes.INSTANCEOF, type);

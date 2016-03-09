@@ -456,7 +456,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
                 // subroutine may "fall through" to the ret of a parent
                 // subroutine; therefore, to find the appropriate ret label we
                 // find the lowest subroutine on the stack that claims to own
-                // this instruction. See the class javadoc comment for an
+                // this instruction. See the classproducers javadoc comment for an
                 // explanation on why this technique is safe (note: it is only
                 // safe if the input is verifiable).
                 LabelNode retlabel = null;
@@ -566,7 +566,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
     }
 
     /**
-     * A class that represents an instantiation of a subroutine. Each
+     * A classproducers that represents an instantiation of a subroutine. Each
      * instantiation has an associate "stack" --- which is a listing of those
      * instantiations that were active when this particular instance of this
      * subroutine was invoked. Each instantiation also has a map from the

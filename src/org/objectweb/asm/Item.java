@@ -31,7 +31,7 @@ package org.objectweb.asm;
 
 /**
  * A constant pool item. Constant pool items can be created with the 'newXXX'
- * methods in the {@link ClassWriter} class.
+ * methods in the {@link ClassWriter} classproducers.
  *
  * @author Eric Bruneton
  */
@@ -43,7 +43,7 @@ final class Item {
     int index;
 
     /**
-     * Type of this constant pool item. A single class is used to represent all
+     * Type of this constant pool item. A single classproducers is used to represent all
      * constant pool item types, in order to minimize the bytecode size of this
      * package. The value of this field is one of {@link ClassWriter#INT},
      * {@link ClassWriter#LONG}, {@link ClassWriter#FLOAT},
@@ -227,7 +227,7 @@ final class Item {
      *
      * @param name invokedynamic's name.
      * @param desc invokedynamic's desc.
-     * @param bsmIndex zero based index into the class attribute BootrapMethods.
+     * @param bsmIndex zero based index into the classproducers attribute BootrapMethods.
      */
     void set(String name, String desc, int bsmIndex) {
         this.type = ClassWriter.INDY;
@@ -241,7 +241,7 @@ final class Item {
     /**
      * Sets the item to a BootstrapMethod item.
      *
-     * @param position position in byte in the class attribute BootrapMethods.
+     * @param position position in byte in the classproducers attribute BootrapMethods.
      * @param hashCode hashcode of the item. This hashcode is processed from
      *        the hashcode of the bootstrap method and the hashcode of
      *        all bootstrap arguments.

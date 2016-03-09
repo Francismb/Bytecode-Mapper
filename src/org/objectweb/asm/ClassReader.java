@@ -33,9 +33,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * A Java class parser to make a {@link ClassVisitor} visit an existing class.
- * This class parses a byte array conforming to the Java class file format and
- * calls the appropriate visit methods of a given class visitor for each field,
+ * A Java classproducers parser to make a {@link ClassVisitor} visit an existing classproducers.
+ * This classproducers parses a byte array conforming to the Java classproducers file format and
+ * calls the appropriate visit methods of a given classproducers visitor for each field,
  * method and bytecode instruction encountered.
  *
  * @author Eric Bruneton
@@ -69,15 +69,15 @@ public class ClassReader {
     static final boolean RESIZE = true;
 
     /**
-     * Flag to skip method code. If this class is set <code>CODE</code>
+     * Flag to skip method code. If this classproducers is set <code>CODE</code>
      * attribute won't be visited. This can be used, for example, to retrieve
      * annotations for methods and method parameters.
      */
     public static final int SKIP_CODE = 1;
 
     /**
-     * Flag to skip the debug information in the class. If this flag is set the
-     * debug information of the class is not visited, i.e. the
+     * Flag to skip the debug information in the classproducers. If this flag is set the
+     * debug information of the classproducers is not visited, i.e. the
      * {@link MethodVisitor#visitLocalVariable visitLocalVariable} and
      * {@link MethodVisitor#visitLineNumber visitLineNumber} methods will not be
      * called.
@@ -85,12 +85,12 @@ public class ClassReader {
     public static final int SKIP_DEBUG = 2;
 
     /**
-     * Flag to skip the stack map frames in the class. If this flag is set the
-     * stack map frames of the class is not visited, i.e. the
+     * Flag to skip the stack map frames in the classproducers. If this flag is set the
+     * stack map frames of the classproducers is not visited, i.e. the
      * {@link MethodVisitor#visitFrame visitFrame} method will not be called.
      * This flag is useful when the {@link ClassWriter#COMPUTE_FRAMES} option is
      * used: it avoids visiting frames that will be ignored and recomputed from
-     * scratch in the class writer.
+     * scratch in the classproducers writer.
      */
     public static final int SKIP_FRAMES = 4;
 
@@ -105,9 +105,9 @@ public class ClassReader {
     public static final int EXPAND_FRAMES = 8;
 
     /**
-     * The class to be parsed. <i>The content of this array must not be
+     * The classproducers to be parsed. <i>The content of this array must not be
      * modified. This field is intended for {@link Attribute} sub classes, and
-     * is normally not needed by class generators or adapters.</i>
+     * is normally not needed by classproducers generators or adapters.</i>
      */
     public final byte[] b;
 
@@ -130,12 +130,12 @@ public class ClassReader {
 
     /**
      * Maximum length of the strings contained in the constant pool of the
-     * class.
+     * classproducers.
      */
     private final int maxStringLength;
 
     /**
-     * Start index of the class header information (access, name...) in
+     * Start index of the classproducers header information (access, name...) in
      * {@link #b b}.
      */
     public final int header;
@@ -147,7 +147,7 @@ public class ClassReader {
     /**
      * Constructs a new {@link ClassReader} object.
      *
-     * @param b the bytecode of the class to be read.
+     * @param b the bytecode of the classproducers to be read.
      */
     public ClassReader(final byte[] b) {
         this(b, 0, b.length);
@@ -156,13 +156,13 @@ public class ClassReader {
     /**
      * Constructs a new {@link ClassReader} object.
      *
-     * @param b the bytecode of the class to be read.
-     * @param off the start offset of the class data.
-     * @param len the length of the class data.
+     * @param b the bytecode of the classproducers to be read.
+     * @param off the start offset of the classproducers data.
+     * @param len the length of the classproducers data.
      */
     public ClassReader(final byte[] b, final int off, final int len) {
         this.b = b;
-        // checks the class version
+        // checks the classproducers version
         if (readShort(6) > Opcodes.V1_7) {
             throw new IllegalArgumentException();
         }
@@ -209,16 +209,16 @@ public class ClassReader {
             index += size;
         }
         maxStringLength = max;
-        // the class header information starts just after the constant pool
+        // the classproducers header information starts just after the constant pool
         header = index;
     }
 
     /**
-     * Returns the class's access flags (see {@link Opcodes}). This value may
+     * Returns the classproducers's access flags (see {@link Opcodes}). This value may
      * not reflect Deprecated and Synthetic flags when bytecode is before 1.5
      * and those flags are represented by attributes.
      *
-     * @return the class access flags
+     * @return the classproducers access flags
      *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
@@ -227,10 +227,10 @@ public class ClassReader {
     }
 
     /**
-     * Returns the internal name of the class (see
+     * Returns the internal name of the classproducers (see
      * {@link Type#getInternalName() getInternalName}).
      *
-     * @return the internal class name
+     * @return the internal classproducers name
      *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
@@ -239,12 +239,12 @@ public class ClassReader {
     }
 
     /**
-     * Returns the internal of name of the super class (see
+     * Returns the internal of name of the super classproducers (see
      * {@link Type#getInternalName() getInternalName}). For interfaces, the
-     * super class is {@link Object}.
+     * super classproducers is {@link Object}.
      *
-     * @return the internal name of super class, or <tt>null</tt> for
-     *         {@link Object} class.
+     * @return the internal name of super classproducers, or <tt>null</tt> for
+     *         {@link Object} classproducers.
      *
      * @see ClassVisitor#visit(int, int, String, String, String, String[])
      */
@@ -254,7 +254,7 @@ public class ClassReader {
     }
 
     /**
-     * Returns the internal names of the class's interfaces (see
+     * Returns the internal names of the classproducers's interfaces (see
      * {@link Type#getInternalName() getInternalName}).
      *
      * @return the array of internal names for all implemented interfaces or
@@ -385,7 +385,7 @@ public class ClassReader {
     private void copyBootstrapMethods(ClassWriter classWriter, Item[] items2, char[] buf) {
         int i, j, k, u, v;
 
-        // skip class header
+        // skip classproducers header
         v = header;
         v += 8 + (readUnsignedShort(v + 6) << 1);
 
@@ -409,7 +409,7 @@ public class ClassReader {
             }
         }
 
-        // read class attributes
+        // read classproducers attributes
         i = readUnsignedShort(v);
         v += 2;
         for (; i > 0; --i) {
@@ -451,7 +451,7 @@ public class ClassReader {
     /**
      * Constructs a new {@link ClassReader} object.
      *
-     * @param is an input stream from which to read the class.
+     * @param is an input stream from which to read the classproducers.
      * @throws IOException if a problem occurs during reading.
      */
     public ClassReader(final InputStream is) throws IOException {
@@ -461,18 +461,18 @@ public class ClassReader {
     /**
      * Constructs a new {@link ClassReader} object.
      *
-     * @param name the binary qualified name of the class to be read.
+     * @param name the binary qualified name of the classproducers to be read.
      * @throws IOException if an exception occurs during reading.
      */
     public ClassReader(final String name) throws IOException {
         this(readClass(ClassLoader.getSystemResourceAsStream(name.replace('.', '/')
-                + ".class"), true));
+                + ".classproducers"), true));
     }
 
     /**
-     * Reads the bytecode of a class.
+     * Reads the bytecode of a classproducers.
      *
-     * @param is an input stream from which to read the class.
+     * @param is an input stream from which to read the classproducers.
      * @param close true to close the input stream after reading.
      * @return the bytecode read from the given input stream.
      * @throws IOException if a problem occurs during reading.
@@ -520,13 +520,13 @@ public class ClassReader {
     // ------------------------------------------------------------------------
 
     /**
-     * Makes the given visitor visit the Java class of this {@link ClassReader}.
-     * This class is the one specified in the constructor (see
+     * Makes the given visitor visit the Java classproducers of this {@link ClassReader}.
+     * This classproducers is the one specified in the constructor (see
      * {@link #ClassReader(byte[]) ClassReader}).
      *
-     * @param classVisitor the visitor that must visit this class.
+     * @param classVisitor the visitor that must visit this classproducers.
      * @param flags option flags that can be used to modify the default behavior
-     *        of this class. See {@link #SKIP_DEBUG}, {@link #EXPAND_FRAMES},
+     *        of this classproducers. See {@link #SKIP_DEBUG}, {@link #EXPAND_FRAMES},
      *        {@link #SKIP_FRAMES}, {@link #SKIP_CODE}.
      */
     public void accept(final ClassVisitor classVisitor, final int flags) {
@@ -534,21 +534,21 @@ public class ClassReader {
     }
 
     /**
-     * Makes the given visitor visit the Java class of this {@link ClassReader}.
-     * This class is the one specified in the constructor (see
+     * Makes the given visitor visit the Java classproducers of this {@link ClassReader}.
+     * This classproducers is the one specified in the constructor (see
      * {@link #ClassReader(byte[]) ClassReader}).
      *
-     * @param classVisitor the visitor that must visit this class.
+     * @param classVisitor the visitor that must visit this classproducers.
      * @param attrs prototypes of the attributes that must be parsed during the
-     *        visit of the class. Any attribute whose type is not equal to the
+     *        visit of the classproducers. Any attribute whose type is not equal to the
      *        type of one the prototypes will not be parsed: its byte array
      *        value will be passed unchanged to the ClassWriter. <i>This may
      *        corrupt it if this value contains references to the constant pool,
-     *        or has syntactic or semantic links with a class element that has
-     *        been transformed by a class adapter between the reader and the
+     *        or has syntactic or semantic links with a classproducers element that has
+     *        been transformed by a classproducers adapter between the reader and the
      *        writer</i>.
      * @param flags option flags that can be used to modify the default behavior
-     *        of this class. See {@link #SKIP_DEBUG}, {@link #EXPAND_FRAMES},
+     *        of this classproducers. See {@link #SKIP_DEBUG}, {@link #EXPAND_FRAMES},
      *        {@link #SKIP_FRAMES}, {@link #SKIP_CODE}.
      */
     public void accept(
@@ -609,7 +609,7 @@ public class ClassReader {
                 v += 6 + readInt(v + 2);
             }
         }
-        // reads the class's attributes
+        // reads the classproducers's attributes
         signature = null;
         String sourceFile = null;
         String sourceDebug = null;
@@ -691,7 +691,7 @@ public class ClassReader {
                     enclosingDesc);
         }
 
-        // visits the class annotations
+        // visits the classproducers annotations
         if (ANNOTATIONS) {
             for (i = 1; i >= 0; --i) {
                 v = i == 0 ? ianns : anns;
@@ -708,7 +708,7 @@ public class ClassReader {
             }
         }
 
-        // visits the class attributes
+        // visits the classproducers attributes
         while (cattrs != null) {
             attr = cattrs.next;
             cattrs.next = null;
@@ -1626,7 +1626,7 @@ public class ClassReader {
             }
         }
 
-        // visits the end of the class
+        // visits the end of the classproducers
         classVisitor.visitEnd();
     }
 
@@ -1944,7 +1944,7 @@ public class ClassReader {
      * Reads an attribute in {@link #b b}.
      *
      * @param attrs prototypes of the attributes that must be parsed during the
-     *        visit of the class. Any attribute whose type is not equal to the
+     *        visit of the classproducers. Any attribute whose type is not equal to the
      *        type of one the prototypes is ignored (i.e. an empty
      *        {@link Attribute} instance is returned).
      * @param type the type of the attribute.
@@ -1998,7 +1998,7 @@ public class ClassReader {
     /**
      * Returns the start index of the constant pool item in {@link #b b}, plus
      * one. <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param item the index a constant pool item.
      * @return the start index of the constant pool item in {@link #b b}, plus
@@ -2010,10 +2010,10 @@ public class ClassReader {
 
     /**
      * Returns the maximum length of the strings contained in the constant pool
-     * of the class.
+     * of the classproducers.
      *
      * @return the maximum length of the strings contained in the constant pool
-     *         of the class.
+     *         of the classproducers.
      */
     public int getMaxStringLength() {
         return maxStringLength;
@@ -2021,7 +2021,7 @@ public class ClassReader {
 
     /**
      * Reads a byte value in {@link #b b}. <i>This method is intended for
-     * {@link Attribute} sub classes, and is normally not needed by class
+     * {@link Attribute} sub classes, and is normally not needed by classproducers
      * generators or adapters.</i>
      *
      * @param index the start index of the value to be read in {@link #b b}.
@@ -2034,7 +2034,7 @@ public class ClassReader {
     /**
      * Reads an unsigned short value in {@link #b b}. <i>This method is
      * intended for {@link Attribute} sub classes, and is normally not needed by
-     * class generators or adapters.</i>
+     * classproducers generators or adapters.</i>
      *
      * @param index the start index of the value to be read in {@link #b b}.
      * @return the read value.
@@ -2046,7 +2046,7 @@ public class ClassReader {
 
     /**
      * Reads a signed short value in {@link #b b}. <i>This method is intended
-     * for {@link Attribute} sub classes, and is normally not needed by class
+     * for {@link Attribute} sub classes, and is normally not needed by classproducers
      * generators or adapters.</i>
      *
      * @param index the start index of the value to be read in {@link #b b}.
@@ -2059,7 +2059,7 @@ public class ClassReader {
 
     /**
      * Reads a signed int value in {@link #b b}. <i>This method is intended for
-     * {@link Attribute} sub classes, and is normally not needed by class
+     * {@link Attribute} sub classes, and is normally not needed by classproducers
      * generators or adapters.</i>
      *
      * @param index the start index of the value to be read in {@link #b b}.
@@ -2073,7 +2073,7 @@ public class ClassReader {
 
     /**
      * Reads a signed long value in {@link #b b}. <i>This method is intended
-     * for {@link Attribute} sub classes, and is normally not needed by class
+     * for {@link Attribute} sub classes, and is normally not needed by classproducers
      * generators or adapters.</i>
      *
      * @param index the start index of the value to be read in {@link #b b}.
@@ -2088,7 +2088,7 @@ public class ClassReader {
     /**
      * Reads an UTF8 string constant pool item in {@link #b b}. <i>This method
      * is intended for {@link Attribute} sub classes, and is normally not needed
-     * by class generators or adapters.</i>
+     * by classproducers generators or adapters.</i>
      *
      * @param index the start index of an unsigned short value in {@link #b b},
      *        whose value is the index of an UTF8 constant pool item.
@@ -2153,15 +2153,15 @@ public class ClassReader {
     }
 
     /**
-     * Reads a class constant pool item in {@link #b b}. <i>This method is
+     * Reads a classproducers constant pool item in {@link #b b}. <i>This method is
      * intended for {@link Attribute} sub classes, and is normally not needed by
-     * class generators or adapters.</i>
+     * classproducers generators or adapters.</i>
      *
      * @param index the start index of an unsigned short value in {@link #b b},
-     *        whose value is the index of a class constant pool item.
+     *        whose value is the index of a classproducers constant pool item.
      * @param buf buffer to be used to read the item. This buffer must be
      *        sufficiently large. It is not automatically resized.
-     * @return the String corresponding to the specified class item.
+     * @return the String corresponding to the specified classproducers item.
      */
     public String readClass(final int index, final char[] buf) {
         // computes the start index of the CONSTANT_Class item in b
@@ -2173,7 +2173,7 @@ public class ClassReader {
     /**
      * Reads a numeric or string constant pool item in {@link #b b}. <i>This
      * method is intended for {@link Attribute} sub classes, and is normally not
-     * needed by class generators or adapters.</i>
+     * needed by classproducers generators or adapters.</i>
      *
      * @param item the index of a constant pool item.
      * @param buf buffer to be used to read the item. This buffer must be

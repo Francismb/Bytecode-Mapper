@@ -55,7 +55,7 @@ public class SignatureWriter extends SignatureVisitor {
     private boolean hasParameters;
 
     /**
-     * Stack used to keep track of class types that have arguments. Each element
+     * Stack used to keep track of classproducers types that have arguments. Each element
      * of this stack is a boolean encoded in one bit. The top of the stack is
      * the lowest order bit. Pushing false = *2, pushing true = *2+1, popping =
      * /2.
@@ -216,7 +216,7 @@ public class SignatureWriter extends SignatureVisitor {
     }
 
     /**
-     * Ends the type arguments of a class or inner class type.
+     * Ends the type arguments of a classproducers or inner classproducers type.
      */
     private void endArguments() {
         if (argumentStack % 2 != 0) {

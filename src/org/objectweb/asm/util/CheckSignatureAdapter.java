@@ -40,7 +40,7 @@ import org.objectweb.asm.signature.SignatureVisitor;
 public class CheckSignatureAdapter extends SignatureVisitor {
 
     /**
-     * Type to be used to check class signatures. See
+     * Type to be used to check classproducers signatures. See
      * {@link #CheckSignatureAdapter(int, SignatureVisitor) CheckSignatureAdapter}.
      */
     public static final int CLASS_SIGNATURE = 0;
@@ -133,7 +133,7 @@ public class CheckSignatureAdapter extends SignatureVisitor {
         this.sv = sv;
     }
 
-    // class and method signatures
+    // classproducers and method signatures
 
     @Override
     public void visitFormalTypeParameter(final String name) {
@@ -168,7 +168,7 @@ public class CheckSignatureAdapter extends SignatureVisitor {
         return new CheckSignatureAdapter(TYPE_SIGNATURE, v);
     }
 
-    // class signatures
+    // classproducers signatures
 
     @Override
     public SignatureVisitor visitSuperclass() {
@@ -276,7 +276,7 @@ public class CheckSignatureAdapter extends SignatureVisitor {
         if (type != TYPE_SIGNATURE || state != EMPTY) {
             throw new IllegalStateException();
         }
-        CheckMethodAdapter.checkInternalName(name, "class name");
+        CheckMethodAdapter.checkInternalName(name, "classproducers name");
         state = CLASS_TYPE;
         if (sv != null) {
             sv.visitClassType(name);
@@ -288,7 +288,7 @@ public class CheckSignatureAdapter extends SignatureVisitor {
         if (state != CLASS_TYPE) {
             throw new IllegalStateException();
         }
-        CheckMethodAdapter.checkIdentifier(name, "inner class name");
+        CheckMethodAdapter.checkIdentifier(name, "inner classproducers name");
         if (sv != null) {
             sv.visitInnerClassType(name);
         }

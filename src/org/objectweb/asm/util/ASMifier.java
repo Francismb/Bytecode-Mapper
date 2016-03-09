@@ -66,7 +66,7 @@ public class ASMifier extends Printer {
     protected Map<Label, String> labelNames;
 
     /**
-     * Pseudo access flag used to distinguish class access flags.
+     * Pseudo access flag used to distinguish classproducers access flags.
      */
     private static final int ACCESS_CLASS = 262144;
 
@@ -76,7 +76,7 @@ public class ASMifier extends Printer {
     private static final int ACCESS_FIELD = 524288;
 
     /**
-     * Pseudo access flag used to distinguish inner class flags.
+     * Pseudo access flag used to distinguish inner classproducers flags.
      */
     private static final int ACCESS_INNER = 1048576;
 
@@ -92,7 +92,7 @@ public class ASMifier extends Printer {
     /**
      * Constructs a new {@link ASMifier}.
      *
-     * @param api the ASM API version implemented by this class. Must be one of
+     * @param api the ASM API version implemented by this classproducers. Must be one of
      *        {@link Opcodes#ASM4}.
      * @param name the name of the visitor variable in the produced code.
      * @param id identifier of the annotation visitor variable in the produced
@@ -105,13 +105,13 @@ public class ASMifier extends Printer {
     }
 
     /**
-     * Prints the ASM source code to generate the given class to the standard
+     * Prints the ASM source code to generate the given classproducers to the standard
      * output. <p> Usage: ASMifier [-debug] &lt;binary
-     * class name or class file name&gt;
+     * classproducers name or classproducers file name&gt;
      *
      * @param args the command line arguments.
      *
-     * @throws Exception if the class cannot be found, or if an IO exception
+     * @throws Exception if the classproducers cannot be found, or if an IO exception
      *         occurs.
      */
     public static void main(final String[] args) throws Exception {
@@ -130,13 +130,13 @@ public class ASMifier extends Printer {
             }
         }
         if (!ok) {
-            System.err.println("Prints the ASM code to generate the given class.");
+            System.err.println("Prints the ASM code to generate the given classproducers.");
             System.err.println("Usage: ASMifier [-debug] "
-                    + "<fully qualified class name or class file name>");
+                    + "<fully qualified classproducers name or classproducers file name>");
             return;
         }
         ClassReader cr;
-        if (args[i].endsWith(".class") || args[i].indexOf('\\') > -1
+        if (args[i].endsWith(".classproducers") || args[i].indexOf('\\') > -1
                 || args[i].indexOf('/') > -1)
         {
             cr = new ClassReader(new FileInputStream(args[i]));
@@ -173,7 +173,7 @@ public class ASMifier extends Printer {
         text.add("import java.util.*;\n");
         text.add("import org.objectweb.asm.*;\n");
         text.add("import org.objectweb.asm.attrs.*;\n");
-        text.add("public class " + simpleName + "Dump implements Opcodes {\n\n");
+        text.add("public classproducers " + simpleName + "Dump implements Opcodes {\n\n");
         text.add("public static byte[] dump () throws Exception {\n\n");
         text.add("ClassWriter cw = new ClassWriter(0);\n");
         text.add("FieldVisitor fv;\n");

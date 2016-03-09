@@ -17,7 +17,7 @@ import java.util.Map;
 public class Instance<T> {
 
     /**
-     * The class/category which has been assigned to this instance after analysis
+     * The classproducers/category which has been assigned to this instance after analysis
      */
     public T category = null;
 

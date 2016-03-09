@@ -33,7 +33,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
 /**
- * A Java field or method type. This class can be used to make it easier to
+ * A Java field or method type. This classproducers can be used to make it easier to
  * manipulate type and method descriptors.
  *
  * @author Eric Bruneton
@@ -248,10 +248,10 @@ public class Type {
     }
 
     /**
-     * Returns the Java type corresponding to the given class.
+     * Returns the Java type corresponding to the given classproducers.
      *
-     * @param c a class.
-     * @return the Java type corresponding to the given class.
+     * @param c a classproducers.
+     * @return the Java type corresponding to the given classproducers.
      */
     public static Type getType(final Class<?> c) {
         if (c.isPrimitive()) {
@@ -510,10 +510,10 @@ public class Type {
     }
 
     /**
-     * Returns the binary name of the class corresponding to this type. This
+     * Returns the binary name of the classproducers corresponding to this type. This
      * method must not be used on method types.
      *
-     * @return the binary name of the class corresponding to this type.
+     * @return the binary name of the classproducers corresponding to this type.
      */
     public String getClassName() {
         switch (sort) {
@@ -549,12 +549,12 @@ public class Type {
     }
 
     /**
-     * Returns the internal name of the class corresponding to this object or
-     * array type. The internal name of a class is its fully qualified name (as
+     * Returns the internal name of the classproducers corresponding to this object or
+     * array type. The internal name of a classproducers is its fully qualified name (as
      * returned by Class.getName(), where '.' are replaced by '/'. This method
      * should only be used for an object or array type.
      *
-     * @return the internal name of the class corresponding to this object type.
+     * @return the internal name of the classproducers corresponding to this object type.
      */
     public String getInternalName() {
         return new String(buf, off, len);
@@ -657,12 +657,12 @@ public class Type {
     // ------------------------------------------------------------------------
 
     /**
-     * Returns the internal name of the given class. The internal name of a
-     * class is its fully qualified name, as returned by Class.getName(), where
+     * Returns the internal name of the given classproducers. The internal name of a
+     * classproducers is its fully qualified name, as returned by Class.getName(), where
      * '.' are replaced by '/'.
      *
-     * @param c an object or array class.
-     * @return the internal name of the given class.
+     * @param c an object or array classproducers.
+     * @return the internal name of the given classproducers.
      */
     public static String getInternalName(final Class<?> c) {
         return c.getName().replace('.', '/');
@@ -671,8 +671,8 @@ public class Type {
     /**
      * Returns the descriptor corresponding to the given Java type.
      *
-     * @param c an object class, a primitive class or an array class.
-     * @return the descriptor corresponding to the given class.
+     * @param c an object classproducers, a primitive classproducers or an array classproducers.
+     * @return the descriptor corresponding to the given classproducers.
      */
     public static String getDescriptor(final Class<?> c) {
         StringBuffer buf = new StringBuffer();
@@ -715,10 +715,10 @@ public class Type {
     }
 
     /**
-     * Appends the descriptor of the given class to the given string buffer.
+     * Appends the descriptor of the given classproducers to the given string buffer.
      *
      * @param buf the string buffer to which the descriptor must be appended.
-     * @param c the class whose descriptor must be computed.
+     * @param c the classproducers whose descriptor must be computed.
      */
     private static void getDescriptor(final StringBuffer buf, final Class<?> c) {
         Class<?> d = c;

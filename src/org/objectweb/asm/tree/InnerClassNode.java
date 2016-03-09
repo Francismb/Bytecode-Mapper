@@ -32,51 +32,51 @@ package org.objectweb.asm.tree;
 import org.objectweb.asm.ClassVisitor;
 
 /**
- * A node that represents an inner class.
+ * A node that represents an inner classproducers.
  *
  * @author Eric Bruneton
  */
 public class InnerClassNode {
 
     /**
-     * The internal name of an inner class (see
+     * The internal name of an inner classproducers (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}).
      */
     public String name;
 
     /**
-     * The internal name of the class to which the inner class belongs (see
+     * The internal name of the classproducers to which the inner classproducers belongs (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}). May
      * be <tt>null</tt>.
      */
     public String outerName;
 
     /**
-     * The (simple) name of the inner class inside its enclosing class. May be
+     * The (simple) name of the inner classproducers inside its enclosing classproducers. May be
      * <tt>null</tt> for anonymous inner classes.
      */
     public String innerName;
 
     /**
-     * The access flags of the inner class as originally declared in the
-     * enclosing class.
+     * The access flags of the inner classproducers as originally declared in the
+     * enclosing classproducers.
      */
     public int access;
 
     /**
      * Constructs a new {@link InnerClassNode}.
      *
-     * @param name the internal name of an inner class (see
+     * @param name the internal name of an inner classproducers (see
      *        {@link org.objectweb.asm.Type#getInternalName() getInternalName}).
-     * @param outerName the internal name of the class to which the inner class
+     * @param outerName the internal name of the classproducers to which the inner classproducers
      *        belongs (see
      *        {@link org.objectweb.asm.Type#getInternalName() getInternalName}).
      *        May be <tt>null</tt>.
-     * @param innerName the (simple) name of the inner class inside its
-     *        enclosing class. May be <tt>null</tt> for anonymous inner
+     * @param innerName the (simple) name of the inner classproducers inside its
+     *        enclosing classproducers. May be <tt>null</tt> for anonymous inner
      *        classes.
-     * @param access the access flags of the inner class as originally declared
-     *        in the enclosing class.
+     * @param access the access flags of the inner classproducers as originally declared
+     *        in the enclosing classproducers.
      */
     public InnerClassNode(
         final String name,
@@ -91,9 +91,9 @@ public class InnerClassNode {
     }
 
     /**
-     * Makes the given class visitor visit this inner class.
+     * Makes the given classproducers visitor visit this inner classproducers.
      *
-     * @param cv a class visitor.
+     * @param cv a classproducers visitor.
      */
     public void accept(final ClassVisitor cv) {
         cv.visitInnerClass(name, outerName, innerName, access);

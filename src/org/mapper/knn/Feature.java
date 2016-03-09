@@ -6,7 +6,7 @@ import org.mapper.knn.instance.Instance;
  * Project ByteCodeMapper
  * Created by Francis on 10/19/15.
  * <p/>
- * A {@link Feature} represents a category(class or field) and a type and value.
+ * A {@link Feature} represents a category(classproducers or field) and a type and value.
  * A {@link Feature} is compared to a {@link Instance} to calculate distance between them.
  */
 public class Feature<T> implements Comparable<Feature<T>> {
@@ -29,7 +29,7 @@ public class Feature<T> implements Comparable<Feature<T>> {
     /**
      * The value of this {@link Feature}
      */
-    public final Double value;
+    public Double value;
 
     /**
      * Constructs a new {@link Feature}

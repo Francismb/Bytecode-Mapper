@@ -30,7 +30,7 @@
 package org.objectweb.asm;
 
 /**
- * A non standard class, field, method or code attribute.
+ * A non standard classproducers, field, method or code attribute.
  *
  * @author Eric Bruneton
  * @author Eugene Kuleshov
@@ -93,10 +93,10 @@ public class Attribute {
     /**
      * Reads a {@link #type type} attribute. This method must return a <i>new</i>
      * {@link Attribute} object, of type {@link #type type}, corresponding to
-     * the <tt>len</tt> bytes starting at the given offset, in the given class
+     * the <tt>len</tt> bytes starting at the given offset, in the given classproducers
      * reader.
      *
-     * @param cr the class that contains the attribute to be read.
+     * @param cr the classproducers that contains the attribute to be read.
      * @param off index of the key byte of the attribute's content in {@link
      *        ClassReader#b cr.b}. The 6 attribute header bytes, containing the
      *        type and the length of the attribute, are not taken into account
@@ -133,8 +133,8 @@ public class Attribute {
     /**
      * Returns the byte array form of this attribute.
      *
-     * @param cw the class to which this attribute must be added. This parameter
-     *        can be used to add to the constant pool of this class the items
+     * @param cw the classproducers to which this attribute must be added. This parameter
+     *        can be used to add to the constant pool of this classproducers the items
      *        that corresponds to this attribute.
      * @param code the bytecode of the method corresponding to this code
      *        attribute, or <tt>null</tt> if this attribute is not a code
@@ -181,7 +181,7 @@ public class Attribute {
     /**
      * Returns the size of all the attributes in this attribute list.
      *
-     * @param cw the class writer to be used to convert the attributes into byte
+     * @param cw the classproducers writer to be used to convert the attributes into byte
      *        arrays, with the {@link #write write} method.
      * @param code the bytecode of the method corresponding to these code
      *        attributes, or <tt>null</tt> if these attributes are not code
@@ -219,7 +219,7 @@ public class Attribute {
      * Writes all the attributes of this attribute list in the given byte
      * vector.
      *
-     * @param cw the class writer to be used to convert the attributes into byte
+     * @param cw the classproducers writer to be used to convert the attributes into byte
      *        arrays, with the {@link #write write} method.
      * @param code the bytecode of the method corresponding to these code
      *        attributes, or <tt>null</tt> if these attributes are not code

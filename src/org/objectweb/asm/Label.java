@@ -262,7 +262,7 @@ public class Label {
     /**
      * Returns the offset corresponding to this label. This offset is computed
      * from the start of the method's bytecode. <i>This method is intended for
-     * {@link Attribute} sub classes, and is normally not needed by class
+     * {@link Attribute} sub classes, and is normally not needed by classproducers
      * generators or adapters.</i>
      *
      * @return the offset corresponding to this label.

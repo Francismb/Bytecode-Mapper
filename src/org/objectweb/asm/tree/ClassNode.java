@@ -41,81 +41,81 @@ import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
 /**
- * A node that represents a class.
+ * A node that represents a classproducers.
  *
  * @author Eric Bruneton
  */
 public class ClassNode extends ClassVisitor {
 
     /**
-     * The class version.
+     * The classproducers version.
      */
     public int version;
 
     /**
-     * The class's access flags (see {@link org.objectweb.asm.Opcodes}). This
-     * field also indicates if the class is deprecated.
+     * The classproducers's access flags (see {@link org.objectweb.asm.Opcodes}). This
+     * field also indicates if the classproducers is deprecated.
      */
     public int access;
 
     /**
-     * The internal name of the class (see
+     * The internal name of the classproducers (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}).
      */
     public String name;
 
     /**
-     * The signature of the class. Mayt be <tt>null</tt>.
+     * The signature of the classproducers. Mayt be <tt>null</tt>.
      */
     public String signature;
 
     /**
-     * The internal of name of the super class (see
+     * The internal of name of the super classproducers (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}). For
-     * interfaces, the super class is {@link Object}. May be <tt>null</tt>,
-     * but only for the {@link Object} class.
+     * interfaces, the super classproducers is {@link Object}. May be <tt>null</tt>,
+     * but only for the {@link Object} classproducers.
      */
     public String superName;
 
     /**
-     * The internal names of the class's interfaces (see
+     * The internal names of the classproducers's interfaces (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}). This
      * list is a list of {@link String} objects.
      */
     public List<String> interfaces;
 
     /**
-     * The name of the source file from which this class was compiled. May be
+     * The name of the source file from which this classproducers was compiled. May be
      * <tt>null</tt>.
      */
     public String sourceFile;
 
     /**
      * Debug information to compute the correspondance between source and
-     * compiled elements of the class. May be <tt>null</tt>.
+     * compiled elements of the classproducers. May be <tt>null</tt>.
      */
     public String sourceDebug;
 
     /**
-     * The internal name of the enclosing class of the class. May be
+     * The internal name of the enclosing classproducers of the classproducers. May be
      * <tt>null</tt>.
      */
     public String outerClass;
 
     /**
-     * The name of the method that contains the class, or <tt>null</tt> if the
-     * class is not enclosed in a method.
+     * The name of the method that contains the classproducers, or <tt>null</tt> if the
+     * classproducers is not enclosed in a method.
      */
     public String outerMethod;
 
     /**
-     * The descriptor of the method that contains the class, or <tt>null</tt>
-     * if the class is not enclosed in a method.
+     * The descriptor of the method that contains the classproducers, or <tt>null</tt>
+     * if the classproducers is not enclosed in a method.
      */
     public String outerMethodDesc;
 
     /**
-     * The runtime visible annotations of this class. This list is a list of
+     * The runtime visible annotations of this classproducers. This list is a list of
      * {@link AnnotationNode} objects. May be <tt>null</tt>.
      *
      * @associates org.objectweb.asm.tree.AnnotationNode
@@ -124,7 +124,7 @@ public class ClassNode extends ClassVisitor {
     public List<AnnotationNode> visibleAnnotations;
 
     /**
-     * The runtime invisible annotations of this class. This list is a list of
+     * The runtime invisible annotations of this classproducers. This list is a list of
      * {@link AnnotationNode} objects. May be <tt>null</tt>.
      *
      * @associates org.objectweb.asm.tree.AnnotationNode
@@ -133,7 +133,7 @@ public class ClassNode extends ClassVisitor {
     public List<AnnotationNode> invisibleAnnotations;
 
     /**
-     * The non standard attributes of this class. This list is a list of
+     * The non standard attributes of this classproducers. This list is a list of
      * {@link Attribute} objects. May be <tt>null</tt>.
      *
      * @associates org.objectweb.asm.Attribute
@@ -141,7 +141,7 @@ public class ClassNode extends ClassVisitor {
     public List<Attribute> attrs;
 
     /**
-     * Informations about the inner classes of this class. This list is a list
+     * Informations about the inner classes of this classproducers. This list is a list
      * of {@link InnerClassNode} objects.
      *
      * @associates org.objectweb.asm.tree.InnerClassNode
@@ -149,7 +149,7 @@ public class ClassNode extends ClassVisitor {
     public List<InnerClassNode> innerClasses;
 
     /**
-     * The fields of this class. This list is a list of {@link FieldNode}
+     * The fields of this classproducers. This list is a list of {@link FieldNode}
      * objects.
      *
      * @associates org.objectweb.asm.tree.FieldNode
@@ -157,7 +157,7 @@ public class ClassNode extends ClassVisitor {
     public List<FieldNode> fields;
 
     /**
-     * The methods of this class. This list is a list of {@link MethodNode}
+     * The methods of this classproducers. This list is a list of {@link MethodNode}
      * objects.
      *
      * @associates org.objectweb.asm.tree.MethodNode
@@ -188,7 +188,7 @@ public class ClassNode extends ClassVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the ClassVisitor abstract class
+    // Implementation of the ClassVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override
@@ -308,7 +308,7 @@ public class ClassNode extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Checks that this class node is compatible with the given ASM API version.
+     * Checks that this classproducers node is compatible with the given ASM API version.
      * This methods checks that this node, and all its nodes recursively, do not
      * contain elements that were introduced in more recent versions of the ASM
      * API than the given version.
@@ -320,9 +320,9 @@ public class ClassNode extends ClassVisitor {
     }
 
     /**
-     * Makes the given class visitor visit this class.
+     * Makes the given classproducers visitor visit this classproducers.
      *
-     * @param cv a class visitor.
+     * @param cv a classproducers visitor.
      */
     public void accept(final ClassVisitor cv) {
         // visits header
@@ -333,7 +333,7 @@ public class ClassNode extends ClassVisitor {
         if (sourceFile != null || sourceDebug != null) {
             cv.visitSource(sourceFile, sourceDebug);
         }
-        // visits outer class
+        // visits outer classproducers
         if (outerClass != null) {
             cv.visitOuterClass(outerClass, outerMethod, outerMethodDesc);
         }

@@ -42,7 +42,7 @@ import org.objectweb.asm.MethodVisitor;
 public class LineNumberNode extends AbstractInsnNode {
 
     /**
-     * A line number. This number refers to the source file from which the class
+     * A line number. This number refers to the source file from which the classproducers
      * was compiled.
      */
     public int line;
@@ -56,7 +56,7 @@ public class LineNumberNode extends AbstractInsnNode {
      * Constructs a new {@link LineNumberNode}.
      *
      * @param line a line number. This number refers to the source file from
-     *        which the class was compiled.
+     *        which the classproducers was compiled.
      * @param start the key instruction corresponding to this line number.
      */
     public LineNumberNode(final int line, final LabelNode start) {

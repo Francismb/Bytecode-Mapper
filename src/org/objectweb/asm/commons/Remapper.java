@@ -37,7 +37,7 @@ import org.objectweb.asm.signature.SignatureVisitor;
 import org.objectweb.asm.signature.SignatureWriter;
 
 /**
- * A class responsible for remapping types and names.
+ * A classproducers responsible for remapping types and names.
  * Subclasses can override the following methods:
  *
  * <ul>

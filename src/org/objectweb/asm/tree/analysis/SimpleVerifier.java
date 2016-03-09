@@ -35,7 +35,7 @@ import org.objectweb.asm.Type;
 
 /**
  * An extended {@link BasicVerifier} that performs more precise verifications.
- * This verifier computes exact class types, instead of using a single "object
+ * This verifier computes exact classproducers types, instead of using a single "object
  * reference" type (as done in the {@link BasicVerifier}).
  *
  * @author Eric Bruneton
@@ -44,22 +44,22 @@ import org.objectweb.asm.Type;
 public class SimpleVerifier extends BasicVerifier {
 
     /**
-     * The class that is verified.
+     * The classproducers that is verified.
      */
     private final Type currentClass;
 
     /**
-     * The super class of the class that is verified.
+     * The super classproducers of the classproducers that is verified.
      */
     private final Type currentSuperClass;
 
     /**
-     * The interfaces implemented by the class that is verified.
+     * The interfaces implemented by the classproducers that is verified.
      */
     private final List<Type> currentClassInterfaces;
 
     /**
-     * If the class that is verified is an interface.
+     * If the classproducers that is verified is an interface.
      */
     private final boolean isInterface;
 
@@ -76,12 +76,12 @@ public class SimpleVerifier extends BasicVerifier {
     }
 
     /**
-     * Constructs a new {@link SimpleVerifier} to verify a specific class. This
-     * class will not be loaded into the JVM since it may be incorrect.
+     * Constructs a new {@link SimpleVerifier} to verify a specific classproducers. This
+     * classproducers will not be loaded into the JVM since it may be incorrect.
      *
-     * @param currentClass the class that is verified.
-     * @param currentSuperClass the super class of the class that is verified.
-     * @param isInterface if the class that is verified is an interface.
+     * @param currentClass the classproducers that is verified.
+     * @param currentSuperClass the super classproducers of the classproducers that is verified.
+     * @param isInterface if the classproducers that is verified is an interface.
      */
     public SimpleVerifier(
         final Type currentClass,
@@ -92,14 +92,14 @@ public class SimpleVerifier extends BasicVerifier {
     }
 
     /**
-     * Constructs a new {@link SimpleVerifier} to verify a specific class. This
-     * class will not be loaded into the JVM since it may be incorrect.
+     * Constructs a new {@link SimpleVerifier} to verify a specific classproducers. This
+     * classproducers will not be loaded into the JVM since it may be incorrect.
      *
-     * @param currentClass the class that is verified.
-     * @param currentSuperClass the super class of the class that is verified.
-     * @param currentClassInterfaces the interfaces implemented by the class
+     * @param currentClass the classproducers that is verified.
+     * @param currentSuperClass the super classproducers of the classproducers that is verified.
+     * @param currentClassInterfaces the interfaces implemented by the classproducers
      *        that is verified.
-     * @param isInterface if the class that is verified is an interface.
+     * @param isInterface if the classproducers that is verified is an interface.
      */
     public SimpleVerifier(
         final Type currentClass,

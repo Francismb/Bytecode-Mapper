@@ -38,7 +38,7 @@ package org.objectweb.asm;
 final class AnnotationWriter extends AnnotationVisitor {
 
     /**
-     * The class writer to which this annotation must be added.
+     * The classproducers writer to which this annotation must be added.
      */
     private final ClassWriter cw;
 
@@ -90,7 +90,7 @@ final class AnnotationWriter extends AnnotationVisitor {
     /**
      * Constructs a new {@link AnnotationWriter}.
      *
-     * @param cw the class writer to which this annotation must be added.
+     * @param cw the classproducers writer to which this annotation must be added.
      * @param named <tt>true<tt> if values are named, <tt>false</tt> otherwise.
      * @param bv where the annotation values must be stored.
      * @param parent where the number of annotation values must be stored.
@@ -113,7 +113,7 @@ final class AnnotationWriter extends AnnotationVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the AnnotationVisitor abstract class
+    // Implementation of the AnnotationVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override

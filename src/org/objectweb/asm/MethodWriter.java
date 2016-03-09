@@ -31,7 +31,7 @@ package org.objectweb.asm;
 
 /**
  * A {@link MethodVisitor} that generates methods in bytecode form. Each visit
- * method of this class appends the bytecode corresponding to the visited
+ * method of this classproducers appends the bytecode corresponding to the visited
  * instruction to a byte vector, in the order these methods are called.
  *
  * @author Eric Bruneton
@@ -117,7 +117,7 @@ class MethodWriter extends MethodVisitor {
     private static final int NOTHING = 2;
 
     /**
-     * The class writer to which this method must be added.
+     * The classproducers writer to which this method must be added.
      */
     final ClassWriter cw;
 
@@ -396,7 +396,7 @@ class MethodWriter extends MethodVisitor {
     /**
      * Constructs a new {@link MethodWriter}.
      *
-     * @param cw the class writer in which the method must be added.
+     * @param cw the classproducers writer in which the method must be added.
      * @param access the method's access flags (see {@link Opcodes}).
      * @param name the method's name.
      * @param desc the method's descriptor (see {@link Type}).
@@ -460,7 +460,7 @@ class MethodWriter extends MethodVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the MethodVisitor abstract class
+    // Implementation of the MethodVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override
@@ -2488,7 +2488,7 @@ class MethodWriter extends MethodVisitor {
                  * inserting frames can change the format of the following
                  * frames, in case of packed frames. In practice the whole table
                  * must be recomputed. For this the frames are marked as
-                 * potentially invalid. This will cause the whole class to be
+                 * potentially invalid. This will cause the whole classproducers to be
                  * reread and rewritten with the COMPUTE_FRAMES option (see the
                  * ClassWriter.toByteArray method). This is not very efficient
                  * but is much easier and requires much less code than any other

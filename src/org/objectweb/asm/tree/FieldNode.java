@@ -162,7 +162,7 @@ public class FieldNode extends FieldVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the FieldVisitor abstract class
+    // Implementation of the FieldVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override
@@ -214,9 +214,9 @@ public class FieldNode extends FieldVisitor {
     }
 
     /**
-     * Makes the given class visitor visit this field.
+     * Makes the given classproducers visitor visit this field.
      *
-     * @param cv a class visitor.
+     * @param cv a classproducers visitor.
      */
     public void accept(final ClassVisitor cv) {
         FieldVisitor fv = cv.visitField(access, name, desc, signature, value);

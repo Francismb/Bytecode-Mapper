@@ -42,7 +42,7 @@ import org.objectweb.asm.MethodVisitor;
 public class FieldInsnNode extends AbstractInsnNode {
 
     /**
-     * The internal name of the field's owner class (see
+     * The internal name of the field's owner classproducers (see
      * {@link org.objectweb.asm.Type#getInternalName() getInternalName}).
      */
     public String owner;
@@ -62,7 +62,7 @@ public class FieldInsnNode extends AbstractInsnNode {
      *
      * @param opcode the opcode of the type instruction to be constructed. This
      *        opcode must be GETSTATIC, PUTSTATIC, GETFIELD or PUTFIELD.
-     * @param owner the internal name of the field's owner class (see
+     * @param owner the internal name of the field's owner classproducers (see
      *        {@link org.objectweb.asm.Type#getInternalName() getInternalName}).
      * @param name the field's name.
      * @param desc the field's descriptor (see {@link org.objectweb.asm.Type}).

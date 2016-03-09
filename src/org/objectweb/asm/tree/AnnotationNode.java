@@ -43,7 +43,7 @@ import org.objectweb.asm.Opcodes;
 public class AnnotationNode extends AnnotationVisitor {
 
     /**
-     * The class descriptor of the annotation class.
+     * The classproducers descriptor of the annotation classproducers.
      */
     public String desc;
 
@@ -65,7 +65,7 @@ public class AnnotationNode extends AnnotationVisitor {
      * constructor</i>. Instead, they must use the
      * {@link #AnnotationNode(int, String)} version.
      *
-     * @param desc the class descriptor of the annotation class.
+     * @param desc the classproducers descriptor of the annotation classproducers.
      */
     public AnnotationNode(final String desc) {
         this(Opcodes.ASM4, desc);
@@ -76,7 +76,7 @@ public class AnnotationNode extends AnnotationVisitor {
      *
      * @param api the ASM API version implemented by this visitor. Must be one
      *        of {@link Opcodes#ASM4}.
-     * @param desc the class descriptor of the annotation class.
+     * @param desc the classproducers descriptor of the annotation classproducers.
      */
     public AnnotationNode(final int api, final String desc) {
         super(api);
@@ -94,7 +94,7 @@ public class AnnotationNode extends AnnotationVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the AnnotationVisitor abstract class
+    // Implementation of the AnnotationVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override

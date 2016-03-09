@@ -80,7 +80,7 @@ public class Textifier extends Printer {
     public static final int METHOD_SIGNATURE = 4;
 
     /**
-     * Constant used in {@link #appendDescriptor appendDescriptor} for class
+     * Constant used in {@link #appendDescriptor appendDescriptor} for classproducers
      * signatures, formatted in bytecode notation
      */
     public static final int CLASS_SIGNATURE = 5;
@@ -93,7 +93,7 @@ public class Textifier extends Printer {
     public static final int TYPE_DECLARATION = 6;
 
     /**
-     * Constant used in {@link #appendDescriptor appendDescriptor} for class
+     * Constant used in {@link #appendDescriptor appendDescriptor} for classproducers
      * signatures, formatted in default Java notation (non-bytecode)
      */
     public static final int CLASS_DECLARATION = 7;
@@ -111,7 +111,7 @@ public class Textifier extends Printer {
     public static final int HANDLE_DESCRIPTOR = 9;
 
     /**
-     * Tab for class members.
+     * Tab for classproducers members.
      */
     protected String tab = "  ";
 
@@ -157,13 +157,13 @@ public class Textifier extends Printer {
     }
 
     /**
-     * Prints a disassembled view of the given class to the standard output. <p>
-     * Usage: Textifier [-debug] &lt;binary class name or class
+     * Prints a disassembled view of the given classproducers to the standard output. <p>
+     * Usage: Textifier [-debug] &lt;binary classproducers name or classproducers
      * file name &gt;
      *
      * @param args the command line arguments.
      *
-     * @throws Exception if the class cannot be found, or if an IO exception
+     * @throws Exception if the classproducers cannot be found, or if an IO exception
      *         occurs.
      */
     public static void main(final String[] args) throws Exception {
@@ -182,13 +182,13 @@ public class Textifier extends Printer {
             }
         }
         if (!ok) {
-            System.err.println("Prints a disassembled view of the given class.");
+            System.err.println("Prints a disassembled view of the given classproducers.");
             System.err.println("Usage: Textifier [-debug] "
-                    + "<fully qualified class name or class file name>");
+                    + "<fully qualified classproducers name or classproducers file name>");
             return;
         }
         ClassReader cr;
-        if (args[i].endsWith(".class") || args[i].indexOf('\\') > -1
+        if (args[i].endsWith(".classproducers") || args[i].indexOf('\\') > -1
                 || args[i].indexOf('/') > -1)
         {
             cr = new ClassReader(new FileInputStream(args[i]));
@@ -215,7 +215,7 @@ public class Textifier extends Printer {
         int major = version & 0xFFFF;
         int minor = version >>> 16;
         buf.setLength(0);
-        buf.append("// class version ")
+        buf.append("// classproducers version ")
                 .append(major)
                 .append('.')
                 .append(minor)
@@ -244,7 +244,7 @@ public class Textifier extends Printer {
         } else if ((access & Opcodes.ACC_INTERFACE) != 0) {
             buf.append("interface ");
         } else if ((access & Opcodes.ACC_ENUM) == 0) {
-            buf.append("class ");
+            buf.append("classproducers ");
         }
         appendDescriptor(INTERNAL_NAME, name);
 
@@ -589,7 +589,7 @@ public class Textifier extends Printer {
     }
 
     private void visitType(final Type value) {
-        buf.append(value.getClassName()).append(".class");
+        buf.append(value.getClassName()).append(".classproducers");
     }
 
     @Override
@@ -864,7 +864,7 @@ public class Textifier extends Printer {
                 if (cst instanceof String) {
                     Printer.appendString(buf, (String) cst);
                 } else if (cst instanceof Type) {
-                    buf.append(((Type) cst).getDescriptor()).append(".class");
+                    buf.append(((Type) cst).getDescriptor()).append(".classproducers");
                 } else if (cst instanceof Handle) {
                     appendHandle((Handle) cst);
                 } else {
@@ -904,7 +904,7 @@ public class Textifier extends Printer {
         if (cst instanceof String) {
             Printer.appendString(buf, (String) cst);
         } else if (cst instanceof Type) {
-            buf.append(((Type) cst).getDescriptor()).append(".class");
+            buf.append(((Type) cst).getDescriptor()).append(".classproducers");
         } else {
             buf.append(cst);
         }
@@ -1056,7 +1056,7 @@ public class Textifier extends Printer {
     /**
      * Prints a disassembled view of the given annotation.
      *
-     * @param desc the class descriptor of the annotation class.
+     * @param desc the classproducers descriptor of the annotation classproducers.
      * @param visible <tt>true</tt> if the annotation is visible at runtime.
      * @return a visitor to visit the annotation values.
      */
@@ -1112,7 +1112,7 @@ public class Textifier extends Printer {
      * {@link #buf buf}.
      *
      * @param type indicates if desc is an internal name, a field descriptor, a
-     *        method descriptor, a class signature, ...
+     *        method descriptor, a classproducers signature, ...
      * @param desc an internal name, type descriptor, or type signature. May be
      *        <tt>null</tt>.
      */

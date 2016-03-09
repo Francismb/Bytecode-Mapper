@@ -31,10 +31,10 @@ package org.objectweb.asm;
 
 /**
  * A {@link ClassVisitor} that generates classes in bytecode form. More
- * precisely this visitor generates a byte array conforming to the Java class
- * file format. It can be used alone, to generate a Java class "from scratch",
- * or with one or more {@link ClassReader ClassReader} and adapter class visitor
- * to generate a modified class from one or more existing Java classes.
+ * precisely this visitor generates a byte array conforming to the Java classproducers
+ * file format. It can be used alone, to generate a Java classproducers "from scratch",
+ * or with one or more {@link ClassReader ClassReader} and adapter classproducers visitor
+ * to generate a modified classproducers from one or more existing Java classes.
  *
  * @author Eric Bruneton
  */
@@ -267,18 +267,18 @@ public class ClassWriter extends ClassVisitor {
 
     /**
      * The type of BootstrapMethods items. These items are stored in a
-     * special class attribute named BootstrapMethods and
+     * special classproducers attribute named BootstrapMethods and
      * not in the constant pool.
      */
     static final int BSM = 33;
 
     /**
-     * The class reader from which this class writer was constructed, if any.
+     * The classproducers reader from which this classproducers writer was constructed, if any.
      */
     ClassReader cr;
 
     /**
-     * Minor and major version numbers of the class to be generated.
+     * Minor and major version numbers of the classproducers to be generated.
      */
     int version;
 
@@ -288,7 +288,7 @@ public class ClassWriter extends ClassVisitor {
     int index;
 
     /**
-     * The constant pool of this class.
+     * The constant pool of this classproducers.
      */
     final ByteVector pool;
 
@@ -341,38 +341,38 @@ public class ClassWriter extends ClassVisitor {
     private short typeCount;
 
     /**
-     * The access flags of this class.
+     * The access flags of this classproducers.
      */
     private int access;
 
     /**
-     * The constant pool item that contains the internal name of this class.
+     * The constant pool item that contains the internal name of this classproducers.
      */
     private int name;
 
     /**
-     * The internal name of this class.
+     * The internal name of this classproducers.
      */
     String thisName;
 
     /**
-     * The constant pool item that contains the signature of this class.
+     * The constant pool item that contains the signature of this classproducers.
      */
     private int signature;
 
     /**
-     * The constant pool item that contains the internal name of the super class
-     * of this class.
+     * The constant pool item that contains the internal name of the super classproducers
+     * of this classproducers.
      */
     private int superName;
 
     /**
-     * Number of interfaces implemented or extended by this class or interface.
+     * Number of interfaces implemented or extended by this classproducers or interface.
      */
     private int interfaceCount;
 
     /**
-     * The interfaces implemented or extended by this class or interface. More
+     * The interfaces implemented or extended by this classproducers or interface. More
      * precisely, this array contains the indexes of the constant pool items
      * that contain the internal names of these interfaces.
      */
@@ -380,39 +380,39 @@ public class ClassWriter extends ClassVisitor {
 
     /**
      * The index of the constant pool item that contains the name of the source
-     * file from which this class was compiled.
+     * file from which this classproducers was compiled.
      */
     private int sourceFile;
 
     /**
-     * The SourceDebug attribute of this class.
+     * The SourceDebug attribute of this classproducers.
      */
     private ByteVector sourceDebug;
 
     /**
-     * The constant pool item that contains the name of the enclosing class of
-     * this class.
+     * The constant pool item that contains the name of the enclosing classproducers of
+     * this classproducers.
      */
     private int enclosingMethodOwner;
 
     /**
      * The constant pool item that contains the name and descriptor of the
-     * enclosing method of this class.
+     * enclosing method of this classproducers.
      */
     private int enclosingMethod;
 
     /**
-     * The runtime visible annotations of this class.
+     * The runtime visible annotations of this classproducers.
      */
     private AnnotationWriter anns;
 
     /**
-     * The runtime invisible annotations of this class.
+     * The runtime invisible annotations of this classproducers.
      */
     private AnnotationWriter ianns;
 
     /**
-     * The non standard attributes of this class.
+     * The non standard attributes of this classproducers.
      */
     private Attribute attrs;
 
@@ -437,7 +437,7 @@ public class ClassWriter extends ClassVisitor {
     ByteVector bootstrapMethods;
 
     /**
-     * The fields of this class. These fields are stored in a linked list of
+     * The fields of this classproducers. These fields are stored in a linked list of
      * {@link FieldWriter} objects, linked to each other by their
      * {@link FieldWriter#fv} field. This field stores the key element of
      * this list.
@@ -445,7 +445,7 @@ public class ClassWriter extends ClassVisitor {
     FieldWriter firstField;
 
     /**
-     * The fields of this class. These fields are stored in a linked list of
+     * The fields of this classproducers. These fields are stored in a linked list of
      * {@link FieldWriter} objects, linked to each other by their
      * {@link FieldWriter#fv} field. This field stores the last element of
      * this list.
@@ -453,7 +453,7 @@ public class ClassWriter extends ClassVisitor {
     FieldWriter lastField;
 
     /**
-     * The methods of this class. These methods are stored in a linked list of
+     * The methods of this classproducers. These methods are stored in a linked list of
      * {@link MethodWriter} objects, linked to each other by their
      * {@link MethodWriter#mv} field. This field stores the key element of
      * this list.
@@ -461,7 +461,7 @@ public class ClassWriter extends ClassVisitor {
     MethodWriter firstMethod;
 
     /**
-     * The methods of this class. These methods are stored in a linked list of
+     * The methods of this classproducers. These methods are stored in a linked list of
      * {@link MethodWriter} objects, linked to each other by their
      * {@link MethodWriter#mv} field. This field stores the last element of
      * this list.
@@ -480,10 +480,10 @@ public class ClassWriter extends ClassVisitor {
     private final boolean computeFrames;
 
     /**
-     * <tt>true</tt> if the stack map tables of this class are invalid. The
+     * <tt>true</tt> if the stack map tables of this classproducers are invalid. The
      * {@link MethodWriter#resizeInstructions} method cannot transform existing
      * stack map tables, and so produces potentially invalid classes when it is
-     * executed. In this case the class is reread and rewritten with the
+     * executed. In this case the classproducers is reread and rewritten with the
      * {@link #COMPUTE_FRAMES} option (the resizeInstructions method can resize
      * stack map tables when this option is used).
      */
@@ -585,7 +585,7 @@ public class ClassWriter extends ClassVisitor {
      * Constructs a new {@link ClassWriter} object.
      *
      * @param flags option flags that can be used to modify the default behavior
-     *        of this class. See {@link #COMPUTE_MAXS}, {@link #COMPUTE_FRAMES}.
+     *        of this classproducers. See {@link #COMPUTE_MAXS}, {@link #COMPUTE_FRAMES}.
      */
     public ClassWriter(final int flags) {
         super(Opcodes.ASM4);
@@ -606,11 +606,11 @@ public class ClassWriter extends ClassVisitor {
      * "mostly add" bytecode transformations. These optimizations are the
      * following:
      *
-     * <ul> <li>The constant pool from the original class is copied as is in the
-     * new class, which saves time. New constant pool entries will be added at
+     * <ul> <li>The constant pool from the original classproducers is copied as is in the
+     * new classproducers, which saves time. New constant pool entries will be added at
      * the end if necessary, but unused constant pool entries <i>won't be
      * removed</i>.</li> <li>Methods that are not transformed are copied as is
-     * in the new class, directly from the original class bytecode (i.e. without
+     * in the new classproducers, directly from the original classproducers bytecode (i.e. without
      * emitting visit events for all the method instructions), which saves a
      * <i>lot</i> of time. Untransformed methods are detected by the fact that
      * the {@link ClassReader} receives {@link MethodVisitor} objects that come
@@ -618,12 +618,12 @@ public class ClassWriter extends ClassVisitor {
      * instance).</li> </ul>
      *
      * @param classReader the {@link ClassReader} used to read the original
-     *        class. It will be used to copy the entire constant pool from the
-     *        original class and also to copy other fragments of original
+     *        classproducers. It will be used to copy the entire constant pool from the
+     *        original classproducers and also to copy other fragments of original
      *        bytecode where applicable.
      * @param flags option flags that can be used to modify the default behavior
-     *        of this class. <i>These option flags do not affect methods that
-     *        are copied as is in the new class. This means that the maximum
+     *        of this classproducers. <i>These option flags do not affect methods that
+     *        are copied as is in the new classproducers. This means that the maximum
      *        stack size nor the stack frames will be computed for these
      *        methods</i>. See {@link #COMPUTE_MAXS}, {@link #COMPUTE_FRAMES}.
      */
@@ -634,7 +634,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the ClassVisitor abstract class
+    // Implementation of the ClassVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override
@@ -768,15 +768,15 @@ public class ClassWriter extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Returns the bytecode of the class that was build with this class writer.
+     * Returns the bytecode of the classproducers that was build with this classproducers writer.
      *
-     * @return the bytecode of the class that was build with this class writer.
+     * @return the bytecode of the classproducers that was build with this classproducers writer.
      */
     public byte[] toByteArray() {
         if (index > Short.MAX_VALUE) {
             throw new RuntimeException("Class file too large!");
         }
-        // computes the real size of the bytecode of this class
+        // computes the real size of the bytecode of this classproducers
         int size = 24 + 2 * interfaceCount;
         int nbFields = 0;
         FieldWriter fb = firstField;
@@ -877,7 +877,7 @@ public class ClassWriter extends ClassVisitor {
             mb = (MethodWriter) mb.mv;
         }
         out.putShort(attributeCount);
-        if (bootstrapMethods != null) {   // should be the key class attribute ?
+        if (bootstrapMethods != null) {   // should be the key classproducers attribute ?
             out.putShort(newUTF8("BootstrapMethods"));
             out.putInt(bootstrapMethods.length + 2).putShort(bootstrapMethodsCount);
             out.putByteArray(bootstrapMethods.data, 0, bootstrapMethods.length);
@@ -934,7 +934,7 @@ public class ClassWriter extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Adds a number or string constant to the constant pool of the class being
+     * Adds a number or string constant to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      *
      * @param cst the value of the constant to be added to the constant pool.
@@ -989,10 +989,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a number or string constant to the constant pool of the class being
+     * Adds a number or string constant to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param cst the value of the constant to be added to the constant pool.
      *        This parameter must be an {@link Integer}, a {@link Float}, a
@@ -1005,10 +1005,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds an UTF8 string to the constant pool of the class being build. Does
+     * Adds an UTF8 string to the constant pool of the classproducers being build. Does
      * nothing if the constant pool already contains a similar item. <i>This
      * method is intended for {@link Attribute} sub classes, and is normally not
-     * needed by class generators or adapters.</i>
+     * needed by classproducers generators or adapters.</i>
      *
      * @param value the String value.
      * @return the index of a new or already existing UTF8 item.
@@ -1025,13 +1025,13 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a class reference to the constant pool of the class being build.
+     * Adds a classproducers reference to the constant pool of the classproducers being build.
      * Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
-     * @param value the internal name of the class.
-     * @return a new or already existing class reference item.
+     * @param value the internal name of the classproducers.
+     * @return a new or already existing classproducers reference item.
      */
     Item newClassItem(final String value) {
         key2.set(CLASS, value, null, null);
@@ -1045,23 +1045,23 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a class reference to the constant pool of the class being build.
+     * Adds a classproducers reference to the constant pool of the classproducers being build.
      * Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
-     * @param value the internal name of the class.
-     * @return the index of a new or already existing class reference item.
+     * @param value the internal name of the classproducers.
+     * @return the index of a new or already existing classproducers reference item.
      */
     public int newClass(final String value) {
         return newClassItem(value).index;
     }
 
     /**
-     * Adds a method type reference to the constant pool of the class being
+     * Adds a method type reference to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param methodDesc method descriptor of the method type.
      * @return a new or already existing method type reference item.
@@ -1078,10 +1078,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a method type reference to the constant pool of the class being
+     * Adds a method type reference to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param methodDesc method descriptor of the method type.
      * @return the index of a new or already existing method type reference
@@ -1092,10 +1092,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a handle to the constant pool of the class being build. Does nothing
+     * Adds a handle to the constant pool of the classproducers being build. Does nothing
      * if the constant pool already contains a similar item. <i>This method is
      * intended for {@link Attribute} sub classes, and is normally not needed by
-     * class generators or adapters.</i>
+     * classproducers generators or adapters.</i>
      *
      * @param tag the kind of this handle. Must be {@link Opcodes#H_GETFIELD},
      *        {@link Opcodes#H_GETSTATIC}, {@link Opcodes#H_PUTFIELD},
@@ -1103,7 +1103,7 @@ public class ClassWriter extends ClassVisitor {
      *        {@link Opcodes#H_INVOKESTATIC}, {@link Opcodes#H_INVOKESPECIAL},
      *        {@link Opcodes#H_NEWINVOKESPECIAL} or
      *        {@link Opcodes#H_INVOKEINTERFACE}.
-     * @param owner the internal name of the field or method owner class.
+     * @param owner the internal name of the field or method owner classproducers.
      * @param name the name of the field or method.
      * @param desc the descriptor of the field or method.
      * @return a new or an already existing method type reference item.
@@ -1132,10 +1132,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a handle to the constant pool of the class being
+     * Adds a handle to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param tag the kind of this handle. Must be {@link Opcodes#H_GETFIELD},
      *        {@link Opcodes#H_GETSTATIC}, {@link Opcodes#H_PUTFIELD},
@@ -1143,7 +1143,7 @@ public class ClassWriter extends ClassVisitor {
      *        {@link Opcodes#H_INVOKESTATIC}, {@link Opcodes#H_INVOKESPECIAL},
      *        {@link Opcodes#H_NEWINVOKESPECIAL} or
      *        {@link Opcodes#H_INVOKEINTERFACE}.
-     * @param owner the internal name of the field or method owner class.
+     * @param owner the internal name of the field or method owner classproducers.
      * @param name the name of the field or method.
      * @param desc the descriptor of the field or method.
      * @return the index of a new or already existing method type reference
@@ -1159,10 +1159,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds an invokedynamic reference to the constant pool of the class being
+     * Adds an invokedynamic reference to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param name name of the invoked method.
      * @param desc descriptor of the invoke method.
@@ -1245,10 +1245,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds an invokedynamic reference to the constant pool of the class being
+     * Adds an invokedynamic reference to the constant pool of the classproducers being
      * build. Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
      * @param name name of the invoked method.
      * @param desc descriptor of the invoke method.
@@ -1268,10 +1268,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a field reference to the constant pool of the class being build.
+     * Adds a field reference to the constant pool of the classproducers being build.
      * Does nothing if the constant pool already contains a similar item.
      *
-     * @param owner the internal name of the field's owner class.
+     * @param owner the internal name of the field's owner classproducers.
      * @param name the field's name.
      * @param desc the field's descriptor.
      * @return a new or already existing field reference item.
@@ -1289,12 +1289,12 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a field reference to the constant pool of the class being build.
+     * Adds a field reference to the constant pool of the classproducers being build.
      * Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
-     * @param owner the internal name of the field's owner class.
+     * @param owner the internal name of the field's owner classproducers.
      * @param name the field's name.
      * @param desc the field's descriptor.
      * @return the index of a new or already existing field reference item.
@@ -1305,10 +1305,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a method reference to the constant pool of the class being build.
+     * Adds a method reference to the constant pool of the classproducers being build.
      * Does nothing if the constant pool already contains a similar item.
      *
-     * @param owner the internal name of the method's owner class.
+     * @param owner the internal name of the method's owner classproducers.
      * @param name the method's name.
      * @param desc the method's descriptor.
      * @param itf <tt>true</tt> if <tt>owner</tt> is an interface.
@@ -1332,12 +1332,12 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a method reference to the constant pool of the class being build.
+     * Adds a method reference to the constant pool of the classproducers being build.
      * Does nothing if the constant pool already contains a similar item.
      * <i>This method is intended for {@link Attribute} sub classes, and is
-     * normally not needed by class generators or adapters.</i>
+     * normally not needed by classproducers generators or adapters.</i>
      *
-     * @param owner the internal name of the method's owner class.
+     * @param owner the internal name of the method's owner classproducers.
      * @param name the method's name.
      * @param desc the method's descriptor.
      * @param itf <tt>true</tt> if <tt>owner</tt> is an interface.
@@ -1353,7 +1353,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds an integer to the constant pool of the class being build. Does
+     * Adds an integer to the constant pool of the classproducers being build. Does
      * nothing if the constant pool already contains a similar item.
      *
      * @param value the int value.
@@ -1371,7 +1371,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a float to the constant pool of the class being build. Does nothing
+     * Adds a float to the constant pool of the classproducers being build. Does nothing
      * if the constant pool already contains a similar item.
      *
      * @param value the float value.
@@ -1389,7 +1389,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a long to the constant pool of the class being build. Does nothing
+     * Adds a long to the constant pool of the classproducers being build. Does nothing
      * if the constant pool already contains a similar item.
      *
      * @param value the long value.
@@ -1408,7 +1408,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a double to the constant pool of the class being build. Does nothing
+     * Adds a double to the constant pool of the classproducers being build. Does nothing
      * if the constant pool already contains a similar item.
      *
      * @param value the double value.
@@ -1427,7 +1427,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a string to the constant pool of the class being build. Does nothing
+     * Adds a string to the constant pool of the classproducers being build. Does nothing
      * if the constant pool already contains a similar item.
      *
      * @param value the String value.
@@ -1445,10 +1445,10 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a name and type to the constant pool of the class being build. Does
+     * Adds a name and type to the constant pool of the classproducers being build. Does
      * nothing if the constant pool already contains a similar item. <i>This
      * method is intended for {@link Attribute} sub classes, and is normally not
-     * needed by class generators or adapters.</i>
+     * needed by classproducers generators or adapters.</i>
      *
      * @param name a name.
      * @param desc a type descriptor.
@@ -1459,7 +1459,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Adds a name and type to the constant pool of the class being build. Does
+     * Adds a name and type to the constant pool of the classproducers being build. Does
      * nothing if the constant pool already contains a similar item.
      *
      * @param name a name.
@@ -1566,15 +1566,15 @@ public class ClassWriter extends ClassVisitor {
     /**
      * Returns the common super type of the two given types. The default
      * implementation of this method <i>loads<i> the two given classes and uses
-     * the java.lang.Class methods to find the common super class. It can be
+     * the java.lang.Class methods to find the common super classproducers. It can be
      * overridden to compute this common super type in other ways, in particular
-     * without actually loading any class, or to take into account the class
+     * without actually loading any classproducers, or to take into account the classproducers
      * that is currently being generated by this ClassWriter, which can of
      * course not be loaded since it is under construction.
      *
-     * @param type1 the internal name of a class.
-     * @param type2 the internal name of another class.
-     * @return the internal name of the common super class of the two given
+     * @param type1 the internal name of a classproducers.
+     * @param type2 the internal name of another classproducers.
+     * @return the internal name of the common super classproducers of the two given
      *         classes.
      */
     protected String getCommonSuperClass(final String type1, final String type2)

@@ -39,7 +39,7 @@ import org.xml.sax.helpers.AttributesImpl;
 
 /**
  * A {@link org.objectweb.asm.ClassVisitor ClassVisitor} that generates SAX 2.0
- * events from the visited class. It can feed any kind of
+ * events from the visited classproducers. It can feed any kind of
  * {@link ContentHandler ContentHandler}, e.g. XML serializer, XSLT
  * or XQuery engines.
  *
@@ -55,7 +55,7 @@ public final class SAXClassAdapter extends ClassVisitor {
     private final boolean singleDocument;
 
     /**
-     * Pseudo access flag used to distinguish class access flags.
+     * Pseudo access flag used to distinguish classproducers access flags.
      */
     private static final int ACCESS_CLASS = 262144;
 
@@ -65,7 +65,7 @@ public final class SAXClassAdapter extends ClassVisitor {
     private static final int ACCESS_FIELD = 524288;
 
     /**
-     * Pseudo access flag used to distinguish inner class flags.
+     * Pseudo access flag used to distinguish inner classproducers flags.
      */
     private static final int ACCESS_INNER = 1048576;
 
@@ -166,7 +166,7 @@ public final class SAXClassAdapter extends ClassVisitor {
                 "minor",
                 "",
                 Integer.toString(version >>> 16));
-        sa.addStart("class", att);
+        sa.addStart("classproducers", att);
 
         sa.addStart("interfaces", new AttributesImpl());
         if (interfaces != null && interfaces.length > 0) {
@@ -267,7 +267,7 @@ public final class SAXClassAdapter extends ClassVisitor {
 
     @Override
     public final void visitEnd() {
-        sa.addEnd("class");
+        sa.addEnd("classproducers");
         if (!singleDocument) {
             sa.addDocumentEnd();
         }

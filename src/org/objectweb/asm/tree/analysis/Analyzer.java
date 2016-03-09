@@ -40,7 +40,7 @@ import org.objectweb.asm.Type;
 import org.objectweb.asm.tree.*;
 
 /**
- * A semantic bytecode analyzer. <i>This class does not fully check that JSR and
+ * A semantic bytecode analyzer. <i>This classproducers does not fully check that JSR and
  * RET instructions are valid.</i>
  *
  * @param <V> type of the Value used for the resources.
@@ -101,7 +101,7 @@ public class Analyzer<V extends Value> implements Opcodes {
     /**
      * Analyzes the given method.
      *
-     * @param owner the internal name of the class to which the method belongs.
+     * @param owner the internal name of the classproducers to which the method belongs.
      * @param m the method to be analyzed.
      * @return the symbolic state of the execution stack frame at each bytecode
      *         instruction of the method. The size of the returned array is
@@ -412,7 +412,7 @@ public class Analyzer<V extends Value> implements Opcodes {
      * execution of control flow resources loop in #analyze. The default
      * implementation of this method does nothing.
      *
-     * @param owner the internal name of the class to which the method belongs.
+     * @param owner the internal name of the classproducers to which the method belongs.
      * @param m the method to be analyzed.
      * @throws AnalyzerException if a problem occurs.
      */

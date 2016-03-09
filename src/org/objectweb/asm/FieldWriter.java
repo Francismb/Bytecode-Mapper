@@ -37,7 +37,7 @@ package org.objectweb.asm;
 final class FieldWriter extends FieldVisitor {
 
     /**
-     * The class writer to which this field must be added.
+     * The classproducers writer to which this field must be added.
      */
     private final ClassWriter cw;
 
@@ -92,7 +92,7 @@ final class FieldWriter extends FieldVisitor {
     /**
      * Constructs a new {@link FieldWriter}.
      *
-     * @param cw the class writer to which this field must be added.
+     * @param cw the classproducers writer to which this field must be added.
      * @param access the field's access flags (see {@link Opcodes}).
      * @param name the field's name.
      * @param desc the field's descriptor (see {@link Type}).
@@ -127,7 +127,7 @@ final class FieldWriter extends FieldVisitor {
     }
 
     // ------------------------------------------------------------------------
-    // Implementation of the FieldVisitor abstract class
+    // Implementation of the FieldVisitor abstract classproducers
     // ------------------------------------------------------------------------
 
     @Override

@@ -19,7 +19,7 @@ import java.util.Comparator;
  * This is an implementation of knn classification.
  * It is used to classify obfuscated fields/classes
  *
- * @param <T> is the data type of category/class
+ * @param <T> is the data type of category/classproducers
  */
 public class FeatureSpace<T> {
 

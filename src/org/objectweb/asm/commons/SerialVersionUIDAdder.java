@@ -45,7 +45,7 @@ import org.objectweb.asm.Opcodes;
 
 /**
  * A {@link ClassVisitor} that adds a serial version unique identifier to a
- * class if missing. Here is typical usage of this class:
+ * classproducers if missing. Here is typical usage of this classproducers:
  *
  * <pre>
  *   ClassWriter cw = new ClassWriter(...);
@@ -60,7 +60,7 @@ import org.objectweb.asm.Opcodes;
  *
  * <pre>
  * The serialVersionUID is computed using the signature of a stream of bytes
- * that reflect the class definition. The National Institute of Standards and
+ * that reflect the classproducers definition. The National Institute of Standards and
  * Technology (NIST) Secure Hash Algorithm (SHA-1) is used to compute a
  * signature for the stream. The key two 32-bit quantities are used to form a
  * 64-bit hash. A java.lang.DataOutputStream is used to convert primitive data
@@ -69,15 +69,15 @@ import org.objectweb.asm.Opcodes;
  *
  * The sequence of items in the stream is as follows:
  *
- * 1. The class name written using UTF encoding.
- * 2. The class modifiers written as a 32-bit integer.
+ * 1. The classproducers name written using UTF encoding.
+ * 2. The classproducers modifiers written as a 32-bit integer.
  * 3. The name of each interface sorted by name written using UTF encoding.
- * 4. For each field of the class sorted by field name (except private static
+ * 4. For each field of the classproducers sorted by field name (except private static
  * and private transient fields):
  * 1. The name of the field in UTF encoding.
  * 2. The modifiers of the field written as a 32-bit integer.
  * 3. The descriptor of the field in UTF encoding
- * 5. If a class initializer exists, write out the following:
+ * 5. If a classproducers initializer exists, write out the following:
  * 1. The name of the method, &lt;clinit&gt;, in UTF encoding.
  * 2. The modifier of the method, java.lang.reflect.Modifier.STATIC,
  * written as a 32-bit integer.
@@ -118,7 +118,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     private boolean computeSVUID;
 
     /**
-     * Set to true if the class already has SVUID.
+     * Set to true if the classproducers already has SVUID.
      */
     private boolean hasSVUID;
 
@@ -128,12 +128,12 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     private int access;
 
     /**
-     * Internal name of the class
+     * Internal name of the classproducers
      */
     private String name;
 
     /**
-     * Interfaces implemented by the class.
+     * Interfaces implemented by the classproducers.
      */
     private String[] interfaces;
 
@@ -144,7 +144,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     private Collection<Item> svuidFields;
 
     /**
-     * Set to true if the class has static initializer.
+     * Set to true if the classproducers has static initializer.
      */
     private boolean hasStaticInitializer;
 
@@ -190,7 +190,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /*
-     * Visitor class header and get class name, access , and interfaces
+     * Visitor classproducers header and get classproducers name, access , and interfaces
      * information (step 1,2, and 3) for SVUID computation.
      */
     @Override
@@ -215,7 +215,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
 
     /*
      * Visitor the methods and get constructor and method information (step 5 and
-     * 7). Also determine if there is a class initializer (step 6).
+     * 7). Also determine if there is a classproducers initializer (step 6).
      */
     @Override
     public MethodVisitor visitMethod(
@@ -256,8 +256,8 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     }
 
     /*
-     * Gets class field information for step 4 of the algorithm. Also determines
-     * if the class already has a SVUID.
+     * Gets classproducers field information for step 4 of the algorithm. Also determines
+     * if the classproducers already has a SVUID.
      */
     @Override
     public FieldVisitor visitField(
@@ -269,7 +269,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     {
         if (computeSVUID) {
             if ("serialVersionUID".equals(name)) {
-                // since the class already has SVUID, we won't be computing it.
+                // since the classproducers already has SVUID, we won't be computing it.
                 computeSVUID = false;
                 hasSVUID = true;
             }
@@ -295,10 +295,10 @@ public class SerialVersionUIDAdder extends ClassVisitor {
 
     /**
      * Handle a bizarre special case. Nested classes (static classes declared
-     * inside another class) that are protected have their access bit set to
-     * public in their class files to deal with some odd reflection situation.
+     * inside another classproducers) that are protected have their access bit set to
+     * public in their classproducers files to deal with some odd reflection situation.
      * Our SVUID computation must do as the JVM does and ignore access bits in
-     * the class file in favor of the access bits InnerClass attribute.
+     * the classproducers file in favor of the access bits InnerClass attribute.
      */
     @Override
     public void visitInnerClass(final String aname, final String outerName, final String innerName, final int attr_access) {
@@ -309,11 +309,11 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     }
 
     /*
-     * Add the SVUID if class doesn't have one
+     * Add the SVUID if classproducers doesn't have one
      */
     @Override
     public void visitEnd() {
-        // compute SVUID and add it to the class
+        // compute SVUID and add it to the classproducers
         if (computeSVUID && !hasSVUID) {
             try {
                 super.visitField(Opcodes.ACC_FINAL + Opcodes.ACC_STATIC,
@@ -335,9 +335,9 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Returns the value of SVUID if the class doesn't have one already. Please
-     * note that 0 is returned if the class already has SVUID, thus use
-     * <code>isHasSVUID</code> to determine if the class already had an SVUID.
+     * Returns the value of SVUID if the classproducers doesn't have one already. Please
+     * note that 0 is returned if the classproducers already has SVUID, thus use
+     * <code>isHasSVUID</code> to determine if the classproducers already had an SVUID.
      *
      * @return Returns the serial version UID
      * @throws IOException if an I/O error occurs
@@ -352,12 +352,12 @@ public class SerialVersionUIDAdder extends ClassVisitor {
             dos = new DataOutputStream(bos);
 
             /*
-             * 1. The class name written using UTF encoding.
+             * 1. The classproducers name written using UTF encoding.
              */
             dos.writeUTF(name.replace('/', '.'));
 
             /*
-             * 2. The class modifiers written as a 32-bit integer.
+             * 2. The classproducers modifiers written as a 32-bit integer.
              */
             dos.writeInt(access
                     & (Opcodes.ACC_PUBLIC | Opcodes.ACC_FINAL
@@ -373,7 +373,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
             }
 
             /*
-             * 4. For each field of the class sorted by field name (except
+             * 4. For each field of the classproducers sorted by field name (except
              * private static and private transient fields):
              *
              * 1. The name of the field in UTF encoding. 2. The modifiers of the
@@ -386,7 +386,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
             writeItems(svuidFields, dos, false);
 
             /*
-             * 5. If a class initializer exists, write out the following: 1. The
+             * 5. If a classproducers initializer exists, write out the following: 1. The
              * name of the method, <clinit>, in UTF encoding. 2. The modifier of
              * the method, java.lang.reflect.Modifier.STATIC, written as a
              * 32-bit integer. 3. The descriptor of the method, ()V, in UTF

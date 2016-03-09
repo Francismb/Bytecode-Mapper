@@ -48,7 +48,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * A {@link org.xml.sax.ContentHandler ContentHandler} that transforms XML
- * document into Java class file. This class can be feeded by any kind of SAX
+ * document into Java classproducers file. This classproducers can be feeded by any kind of SAX
  * 2.0 event producers, e.g. XML parser, XSLT or XPath engines, or custom code.
  *
  * @see SAXClassAdapter
@@ -79,7 +79,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
      */
     protected Map<Object, Label> labels;
 
-    private static final String BASE = "class";
+    private static final String BASE = "classproducers";
 
     private final RuleSet RULES = new RuleSet();
     {
@@ -318,7 +318,7 @@ public class ASMContentHandler extends DefaultHandler implements Opcodes {
     /**
      * Constructs a new {@link ASMContentHandler ASMContentHandler} object.
      *
-     * @param cv class visitor that will be called to reconstruct the classfile
+     * @param cv classproducers visitor that will be called to reconstruct the classfile
      *        using the XML stream.
      */
     public ASMContentHandler(final ClassVisitor cv) {

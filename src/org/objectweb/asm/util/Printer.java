@@ -115,7 +115,7 @@ public abstract class Printer {
     }
 
     /**
-     * The ASM API version implemented by this class. The value of this field
+     * The ASM API version implemented by this classproducers. The value of this field
      * must be one of {@link Opcodes#ASM4}.
      */
     protected final int api;
@@ -131,7 +131,7 @@ public abstract class Printer {
      * interlaced (some instructions from method one, then some instructions
      * from method two, then some instructions from method one again...), it is
      * not possible to print the visited instructions directly to a sequential
-     * stream. A class is therefore printed in a two steps process: a string
+     * stream. A classproducers is therefore printed in a two steps process: a string
      * tree is constructed during the visit, and printed to a sequential stream
      * at the end of the visit. This string tree is stored in this field, as a
      * string list that can contain other string lists, which can themselves
@@ -167,7 +167,7 @@ public abstract class Printer {
     public abstract void visitSource(final String file, final String debug);
 
     /**
-     * Class outer class.
+     * Class outer classproducers.
      * See {@link org.objectweb.asm.ClassVisitor#visitOuterClass}.
      */
     public abstract void visitOuterClass(
