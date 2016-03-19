@@ -45,8 +45,8 @@ public class KnnTest {
         // Compute the instance
         space.compute(instance, false);
 
-        // Output the instances class
-        System.out.println("Knn computed the instance to be of class" + instance.category);
+        // Output the instances classproducers
+        System.out.println("Knn computed the instance to be of classproducers" + instance.category);
     }
 
 }
