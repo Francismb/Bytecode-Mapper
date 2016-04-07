@@ -2,6 +2,7 @@ package org.mapper.knn.producer;
 
 import org.mapper.knn.Feature;
 import org.objectweb.asm.tree.ClassNode;
+import org.objectweb.asm.tree.FieldNode;
 
 import java.util.Map;
 
@@ -17,10 +18,9 @@ public abstract class FeatureProducer<T> {
      */
     public abstract Map<String, Feature<T>> getFeatures();
 
-    public void visitClassNode(final ClassNode classNode) {
-    }
-    public void visitPack(final Map<String, ClassNode> classes) {
-    }
+    public void visitClassNode(final ClassNode classNode) {}
+    public void visitFieldNode(final ClassNode classnode, final FieldNode fieldNode){}
+    public void visitPack(final Map<String, ClassNode> classes) {}
 
     /**
      * Will get an array of all the {@link Feature} from {@link #getFeatures()}
@@ -49,5 +49,26 @@ public abstract class FeatureProducer<T> {
             throw new NullPointerException("Features have not been created yet");
         }
         return features.get(key);
+    }
+
+    /**
+     * Processes all the {@link FeatureProducer}
+     * @param producers the array of producers to process
+     * @param classes the classes to use to process the producers
+     */
+    public static void process(final FeatureProducer[] producers, final Map<String, ClassNode> classes) {
+        for (final FeatureProducer producer : producers) {
+            for (final ClassNode classNode : classes.values()) {
+                // visit the ClassNode
+                producer.visitClassNode(classNode);
+
+                for (final FieldNode fieldNode : classNode.fields) {
+                    // Visit the FieldNode
+                    producer.visitFieldNode(classNode, fieldNode);
+                }
+            }
+            // Visit the whole map of classes
+            producer.visitPack(classes);
+        }
     }
 }
