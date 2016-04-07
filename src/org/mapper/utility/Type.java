@@ -1,8 +1,8 @@
 package org.mapper.utility;
 
 /**
- * Project DefaultByteCodeMapperOLD
- * Created by francis on 10/19/15.
+ * Created by Francis on 10/19/15.
+ * Project Bytecode-Mapper.
  */
 public class Type {
 

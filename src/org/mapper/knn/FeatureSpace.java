@@ -13,8 +13,8 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * Project ByteCodeMapper
  * Created by Francis on 10/19/15.
+ * Project Bytecode-Mapper.
  * <p/>
  * This is an implementation of knn classification.
  * It is used to classify obfuscated fields/classes

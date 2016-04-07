@@ -45,7 +45,7 @@ import org.objectweb.asm.tree.TryCatchBlockNode;
  * existing, in-code handlers.
  *
  * Behavior is only defined for properly-nested handlers. If any "try" blocks
- * overlap (something that isn't possible in Java code) then this may not do
+ * overlap (something that isn'value possible in Java code) then this may not do
  * what you want. In fact, this adapter just sorts by the length of the "try"
  * block, taking advantage of the fact that a given try block must be larger
  * than any block it contains).

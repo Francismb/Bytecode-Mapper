@@ -608,7 +608,7 @@ public class ClassWriter extends ClassVisitor {
      *
      * <ul> <li>The constant pool from the original classproducers is copied as is in the
      * new classproducers, which saves time. New constant pool entries will be added at
-     * the end if necessary, but unused constant pool entries <i>won't be
+     * the end if necessary, but unused constant pool entries <i>won'value be
      * removed</i>.</li> <li>Methods that are not transformed are copied as is
      * in the new classproducers, directly from the original classproducers bytecode (i.e. without
      * emitting visit events for all the method instructions), which saves a
@@ -1211,7 +1211,7 @@ public class ClassWriter extends ClassVisitor {
             }
 
             // because the data encode the size of the argument
-            // we don't need to test if these size are equals
+            // we don'value need to test if these size are equals
             int resultPosition = result.intVal;
             for (int p = 0; p < length; p++) {
                 if (data[position + p] != data[resultPosition + p]) {

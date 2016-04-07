@@ -4,7 +4,8 @@ import org.mapper.knn.instance.Instance;
 
 /**
  * Created by Francis on 24/02/16.
- * <p/>
+ * Project Bytecode-Mapper.
+ *
  * Represents an {@link Identity} with a generic type.
  */
 public class Identity<T> {

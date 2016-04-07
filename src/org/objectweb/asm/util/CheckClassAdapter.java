@@ -80,7 +80,7 @@ import org.objectweb.asm.tree.analysis.SimpleVerifier;
  * </pre>
  *
  * Above code runs transformed bytecode trough the
- * <code>CheckClassAdapter</code>. It won't be exactly the same verification
+ * <code>CheckClassAdapter</code>. It won'value be exactly the same verification
  * as JVM does, but it run data flow resources for the code of each method and
  * checks that expectations are met for each method instruction.
  *

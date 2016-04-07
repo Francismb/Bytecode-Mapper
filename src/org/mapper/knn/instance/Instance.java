@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Project ByteCodeMapper
  * Created by Francis on 10/19/15.
+ * Project Bytecode-Mapper.
  * <p/>
  * A Instance<T> represents a list of Features which are used
  * to categorise the instance.

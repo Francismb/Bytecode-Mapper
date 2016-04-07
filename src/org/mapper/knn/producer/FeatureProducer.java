@@ -8,6 +8,7 @@ import java.util.Map;
 
 /**
  * Created by Francis on 8/03/16.
+ * Project Bytecode-Mapper.
  */
 public abstract class FeatureProducer<T> {
 
@@ -18,9 +19,24 @@ public abstract class FeatureProducer<T> {
      */
     public abstract Map<String, Feature<T>> getFeatures();
 
+    /**
+     * Visits a {@link ClassNode}
+     * @param classNode the {@link ClassNode} to be visited
+     */
     public void visitClassNode(final ClassNode classNode) {}
+
+    /**
+     * Visits a {@link FieldNode}
+     * @param classnode the {@link FieldNode} parent
+     * @param fieldNode the {@link FieldNode} to visit
+     */
     public void visitFieldNode(final ClassNode classnode, final FieldNode fieldNode){}
-    public void visitPack(final Map<String, ClassNode> classes) {}
+
+    /**
+     * Visits a {@link Map} of classes
+     * @param classes the {@link Map} of classes to visit
+     */
+    public void visitClassNodeMap(final Map<String, ClassNode> classes) {}
 
     /**
      * Will get an array of all the {@link Feature} from {@link #getFeatures()}
@@ -68,7 +84,7 @@ public abstract class FeatureProducer<T> {
                 }
             }
             // Visit the whole map of classes
-            producer.visitPack(classes);
+            producer.visitClassNodeMap(classes);
         }
     }
 }

@@ -285,7 +285,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
         while (true) {
             AbstractInsnNode node = instructions.get(index);
 
-            // don't visit a node twice
+            // don'value visit a node twice
             if (sub.get(index)) {
                 return;
             }
@@ -437,7 +437,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
                 continue;
             }
 
-            // We don't want to emit instructions that were already
+            // We don'value want to emit instructions that were already
             // emitted by a subroutine higher on the stack. Note that
             // it is still possible for a given instruction to be
             // emitted twice because it may belong to two subroutines
@@ -639,7 +639,7 @@ public class JSRInlinerAdapter extends MethodNode implements Opcodes {
 
                     if (duplbl == null) {
                         // if we already have a label pointing at this spot,
-                        // don't recreate it.
+                        // don'value recreate it.
                         duplbl = new LabelNode();
                     }
 

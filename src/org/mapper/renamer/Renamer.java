@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Project DefaultByteCodeMapperOLD
- * Created by francis on 10/19/15.
+ * Created by Francis on 10/19/15.
+ * Project Bytecode-Mapper.
  *
  * Renames old field and classproducers names to new ones.
  */

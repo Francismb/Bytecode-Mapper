@@ -8,6 +8,7 @@ import java.util.Set;
 
 /**
  * Created by Francis on 24/02/16.
+ * Project Bytecode-Mapper.
  *
  * Represents a java classproducers identity
  */

@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Francis on 9/03/16.
+ * Created by Francis on 7/04/16.
  * Project Bytecode-Mapper.
  */
-public class BooleanFeatureProducer extends FeatureProducer<ClassNode> {
+public class InterfaceFeatureProducer extends FeatureProducer<ClassNode>{
 
     private Map<String, Feature<ClassNode>> features = new HashMap<>();
 
@@ -25,12 +25,7 @@ public class BooleanFeatureProducer extends FeatureProducer<ClassNode> {
 
     @Override
     public void visitClassNode(final ClassNode classNode) {
-        final Feature<ClassNode> feature = new Feature<>(classNode, "BOOLEANS", 0.0);
-        for (final FieldNode fieldNode : classNode.fields) {
-            if (Type.isNot(fieldNode.access, Opcodes.ACC_STATIC) && fieldNode.desc.equals("Z")) {
-                feature.value++;
-            }
-        }
+        final Feature<ClassNode> feature = new Feature<>(classNode, "INTERFACES", (double) classNode.interfaces.size());
         features.put(classNode.name, feature);
     }
 }

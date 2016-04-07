@@ -6,15 +6,16 @@ import org.mapper.utility.Type;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldNode;
+import org.objectweb.asm.tree.MethodNode;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Francis on 9/03/16.
+ * Created by Francis on 7/04/16.
  * Project Bytecode-Mapper.
  */
-public class BooleanFeatureProducer extends FeatureProducer<ClassNode> {
+public class MethodsFeatureProducer extends FeatureProducer<ClassNode>{
 
     private Map<String, Feature<ClassNode>> features = new HashMap<>();
 
@@ -25,9 +26,9 @@ public class BooleanFeatureProducer extends FeatureProducer<ClassNode> {
 
     @Override
     public void visitClassNode(final ClassNode classNode) {
-        final Feature<ClassNode> feature = new Feature<>(classNode, "BOOLEANS", 0.0);
-        for (final FieldNode fieldNode : classNode.fields) {
-            if (Type.isNot(fieldNode.access, Opcodes.ACC_STATIC) && fieldNode.desc.equals("Z")) {
+        final Feature<ClassNode> feature = new Feature<>(classNode, "METHODS", 0.0);
+        for (final MethodNode methodNode : classNode.methods) {
+            if (Type.isNot(methodNode.access, Opcodes.ACC_STATIC)) {
                 feature.value++;
             }
         }

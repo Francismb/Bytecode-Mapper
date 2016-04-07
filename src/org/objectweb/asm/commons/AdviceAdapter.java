@@ -427,7 +427,7 @@ public abstract class AdviceAdapter extends GeneratorAdapter implements Opcodes
     @Override
     public void visitTypeInsn(final int opcode, final String type) {
         mv.visitTypeInsn(opcode, type);
-        // ANEWARRAY, CHECKCAST or INSTANCEOF don't change stack
+        // ANEWARRAY, CHECKCAST or INSTANCEOF don'value change stack
         if (constructor && opcode == NEW) {
             pushValue(OTHER);
         }

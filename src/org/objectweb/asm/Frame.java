@@ -754,7 +754,7 @@ final class Frame {
      *
      * @param cw the ClassWriter to which this label belongs.
      * @param t a type
-     * @return t or, if t is one of the types on which a constructor is invoked
+     * @return value or, if value is one of the types on which a constructor is invoked
      *         in the basic block, the type corresponding to this constructor.
      */
     private int init(final ClassWriter cw, final int t) {
@@ -1378,7 +1378,7 @@ final class Frame {
     {
         int u = types[index];
         if (u == t) {
-            // if the types are equal, merge(u,t)=u, so there is no change
+            // if the types are equal, merge(u,value)=u, so there is no change
             return false;
         }
         if ((t & ~DIM) == NULL) {
@@ -1388,7 +1388,7 @@ final class Frame {
             t = NULL;
         }
         if (u == 0) {
-            // if types[index] has never been assigned, merge(u,t)=t
+            // if types[index] has never been assigned, merge(u,value)=value
             types[index] = t;
             return true;
         }
@@ -1396,34 +1396,34 @@ final class Frame {
         if ((u & BASE_KIND) == OBJECT || (u & DIM) != 0) {
             // if u is a reference type of any dimension
             if (t == NULL) {
-                // if t is the NULL type, merge(u,t)=u, so there is no change
+                // if value is the NULL type, merge(u,value)=u, so there is no change
                 return false;
             } else if ((t & (DIM | BASE_KIND)) == (u & (DIM | BASE_KIND))) {
                 if ((u & BASE_KIND) == OBJECT) {
-                    // if t is also a reference type, and if u and t have the
-                    // same dimension merge(u,t) = dim(t) | common parent of the
-                    // element types of u and t
+                    // if value is also a reference type, and if u and value have the
+                    // same dimension merge(u,value) = dim(value) | common parent of the
+                    // element types of u and value
                     v = (t & DIM) | OBJECT
                             | cw.getMergedType(t & BASE_VALUE, u & BASE_VALUE);
                 } else {
-                    // if u and t are array types, but not with the same element
-                    // type, merge(u,t)=java/lang/Object
+                    // if u and value are array types, but not with the same element
+                    // type, merge(u,value)=java/lang/Object
                     v = OBJECT | cw.addType("java/lang/Object");
                 }
             } else if ((t & BASE_KIND) == OBJECT || (t & DIM) != 0) {
-                // if t is any other reference or array type,
-                // merge(u,t)=java/lang/Object
+                // if value is any other reference or array type,
+                // merge(u,value)=java/lang/Object
                 v = OBJECT | cw.addType("java/lang/Object");
             } else {
-                // if t is any other type, merge(u,t)=TOP
+                // if value is any other type, merge(u,value)=TOP
                 v = TOP;
             }
         } else if (u == NULL) {
-            // if u is the NULL type, merge(u,t)=t,
-            // or TOP if t is not a reference type
+            // if u is the NULL type, merge(u,value)=value,
+            // or TOP if value is not a reference type
             v = (t & BASE_KIND) == OBJECT || (t & DIM) != 0 ? t : TOP;
         } else {
-            // if u is any other type, merge(u,t)=TOP whatever t
+            // if u is any other type, merge(u,value)=TOP whatever value
             v = TOP;
         }
         if (u != v) {

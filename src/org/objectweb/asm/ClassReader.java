@@ -70,7 +70,7 @@ public class ClassReader {
 
     /**
      * Flag to skip method code. If this classproducers is set <code>CODE</code>
-     * attribute won't be visited. This can be used, for example, to retrieve
+     * attribute won'value be visited. This can be used, for example, to retrieve
      * annotations for methods and method parameters.
      */
     public static final int SKIP_CODE = 1;

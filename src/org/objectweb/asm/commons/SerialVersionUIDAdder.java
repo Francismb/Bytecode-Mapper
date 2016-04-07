@@ -269,7 +269,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     {
         if (computeSVUID) {
             if ("serialVersionUID".equals(name)) {
-                // since the classproducers already has SVUID, we won't be computing it.
+                // since the classproducers already has SVUID, we won'value be computing it.
                 computeSVUID = false;
                 hasSVUID = true;
             }
@@ -309,7 +309,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     }
 
     /*
-     * Add the SVUID if classproducers doesn't have one
+     * Add the SVUID if classproducers doesn'value have one
      */
     @Override
     public void visitEnd() {
@@ -335,7 +335,7 @@ public class SerialVersionUIDAdder extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Returns the value of SVUID if the classproducers doesn't have one already. Please
+     * Returns the value of SVUID if the classproducers doesn'value have one already. Please
      * note that 0 is returned if the classproducers already has SVUID, thus use
      * <code>isHasSVUID</code> to determine if the classproducers already had an SVUID.
      *
